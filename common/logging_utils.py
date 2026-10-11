@@ -20,6 +20,22 @@ def set_seed(seed: int) -> None:
         torch.cuda.manual_seed_all(seed)
 
 
+def print_gpu_info() -> None:
+    """Print the selected GPU and its current free/total device memory."""
+    if not torch.cuda.is_available():
+        print("CUDA GPU: unavailable", flush=True)
+        return
+    device = torch.cuda.current_device()
+    free, total = torch.cuda.mem_get_info(device)
+    name = torch.cuda.get_device_name(device)
+    print(
+        f"CUDA GPU {device}/{torch.cuda.device_count()}: {name} | "
+        f"VRAM free {free / 2**30:.2f} GiB / total {total / 2**30:.2f} GiB | "
+        f"PyTorch allocated {torch.cuda.memory_allocated(device) / 2**30:.2f} GiB",
+        flush=True,
+    )
+
+
 def ensure_parent(path: str | Path) -> Path:
     p = repo_path(path)
     p.parent.mkdir(parents=True, exist_ok=True)

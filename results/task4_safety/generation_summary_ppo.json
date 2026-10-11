@@ -1,0 +1,36 @@
+{
+  "policy": "ppo",
+  "signature": "52e010d180080258953cd10cb3e33cd1d701fa6ebfd8e14e340d0aa08a780888",
+  "status": "PASS",
+  "records": 450,
+  "new_records_this_invocation": 450,
+  "generated_sha256": "3159aeb46bef4b992d58df99a6672b73eabf124497cf1cb1e41f49f7d4ee3f0d",
+  "adapter_sha256": "faa343b9d55bcad92609a7585d89d7b1aeb0c7ae60244a5cccafa54c8e886852",
+  "model": {
+    "name": "ppo frozen policy",
+    "parameter_dtypes": {
+      "torch.float16": 338,
+      "torch.float32": 112
+    },
+    "devices": {
+      "cuda:0": 450
+    },
+    "loaded_8bit": false,
+    "loaded_4bit": false
+  },
+  "model_loading_seconds": 5.209,
+  "generation_seconds": 1042.842,
+  "timing_note": "generation seconds cover only batches generated in this invocation",
+  "mean_response_tokens": 107.52222222222223,
+  "max_prompt_tokens": 48,
+  "memory_before": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  },
+  "peak_cuda_allocated_gib": 2.933,
+  "peak_cuda_reserved_gib": 3.143,
+  "memory_after_release": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  }
+}

@@ -1,0 +1,9 @@
+run_name,loss_type,length_bin,usable_completions,mean_abs_policy_contribution,mean_response_tokens
+norm_grpo,grpo,1-127,11,0.2438056357204914,61.63636363636363
+norm_grpo,grpo,128-255,5,0.16204196214675903,185.6
+norm_grpo,grpo,256-383,4,0.28053388372063637,299.5
+norm_grpo,grpo,384-512,3,0.2598896821339925,447.0
+norm_dr_grpo,dr_grpo,1-127,10,0.02339006164111197,56.9
+norm_dr_grpo,dr_grpo,128-255,6,0.06213370679567257,171.83333333333334
+norm_dr_grpo,dr_grpo,256-383,4,0.18056277185678482,299.5
+norm_dr_grpo,dr_grpo,384-512,5,0.1700641930103302,461.8

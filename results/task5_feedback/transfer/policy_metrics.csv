@@ -1,0 +1,4 @@
+policy,prompts,exact_correct,exact_accuracy,format_compliant_count,format_compliance_rate,mean_response_tokens,std_response_tokens,generated_response_tokens,eos_rate,generation_cap_rate
+sft,100,48,0.48,57,0.57,167.88,90.0407996410516,16788,0.98,0.02
+rlvr,100,50,0.5,57,0.57,171.97,95.70208513924867,17197,0.98,0.02
+rlaif,100,49,0.49,56,0.56,172.28,98.8628423625378,17228,0.98,0.02

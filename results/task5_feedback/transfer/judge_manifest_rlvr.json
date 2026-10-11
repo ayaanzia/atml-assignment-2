@@ -1,0 +1,18 @@
+{
+  "signature": "776e1a077b6e561c1e3265114eedebd3906a2ba1e90874a30cc25609fb8a1dab",
+  "protocol": {
+    "dataset": "transfer",
+    "competitor": "rlvr",
+    "generated_sha256": {
+      "sft": "a267b131b5ec1d983ecfc2c445498c7ebb0e3a920093275b419388cc422af6fe",
+      "rlvr": "10713941a3571f62ffb1148d22c0668fe228822537b48d46e6475dd2cee05f8c"
+    },
+    "judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "judge_rubric_sha256": "ed8b061fbb49f09fa68cf631893196b9ae2f5bbe4f007b0ae7b06dcd7e104df9",
+    "judge_helper_sha256": "13e10a76c225aae8db5e17900bb070f89e4ebf51ab5b78dd86a5423740c1a1f9",
+    "compute_dtype": "float16",
+    "quantize_4bit": true,
+    "comparison_order": "SFT first, competitor second",
+    "tie_rule": "one-half win"
+  }
+}

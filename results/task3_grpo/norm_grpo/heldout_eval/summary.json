@@ -1,0 +1,58 @@
+{
+  "name": "norm_grpo",
+  "signature": "0b43eaf26a37bfd88472567cdb71cd0144f5b753f70fc00a6b2049223b58f422",
+  "adapter": "/workspace/atml-pa2-t34/outputs/task3_grpo/norm_grpo",
+  "adapter_sha256": "e4712d8dee03585de775039c8a8b6953c873c1376df3ea0226256a68d49d0cc5",
+  "metrics": {
+    "prompts": 200,
+    "mean_raw_reward": 1.567317922115326,
+    "std_raw_reward": 1.2101290398929208,
+    "sampled_kl_token_mean": 7.26263470560441e-05,
+    "token_entropy_mean": 0.9791362419631265,
+    "total_usable_response_tokens": 50524,
+    "generated_response_tokens": 50524,
+    "mean_response_tokens": 252.62,
+    "std_response_tokens": 191.76223715841448,
+    "eos_rate": 0.785,
+    "generation_cap_rate": 0.215,
+    "prompt_truncated_count": 35,
+    "reward_input_truncated_count": 2
+  },
+  "models": [
+    {
+      "name": "GRPO policy",
+      "parameter_dtypes": {
+        "torch.float16": 338,
+        "torch.float32": 112
+      },
+      "trainable_dtypes": {},
+      "devices": {
+        "cuda:0": 450
+      },
+      "loaded_8bit": false,
+      "loaded_4bit": false
+    },
+    {
+      "name": "frozen reward model",
+      "parameter_dtypes": {
+        "torch.float16": 143,
+        "torch.int8": 196
+      },
+      "trainable_dtypes": {},
+      "devices": {
+        "cuda:0": 339
+      },
+      "loaded_8bit": true,
+      "loaded_4bit": false
+    }
+  ],
+  "autocast_dtype": "torch.float16",
+  "prompt_truncation": "trim older user content; preserve chat wrapper and assistant suffix",
+  "model_loading_seconds": 9.593,
+  "generation_seconds": 2537.889,
+  "scoring_seconds": 73.443,
+  "new_records_this_invocation": 200,
+  "timing_note": "phase seconds cover newly processed records; resumed records are excluded",
+  "peak_cuda_allocated_gib": 5.366,
+  "peak_cuda_reserved_gib": 6.162
+}

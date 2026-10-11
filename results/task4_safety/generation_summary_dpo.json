@@ -1,0 +1,36 @@
+{
+  "policy": "dpo",
+  "signature": "d07f415fee98c44ca53ca2cc797027a2a4a6b9170f5bffede211cfcea94cf618",
+  "status": "PASS",
+  "records": 450,
+  "new_records_this_invocation": 450,
+  "generated_sha256": "0c3158c2309d24f0e4211bf50c06bcd731bda35fdf80b043012f3944ce4847b3",
+  "adapter_sha256": "181da219b41c3e4dac4e2e469ea73b4e973541faed16664e07111230ea02d455",
+  "model": {
+    "name": "dpo frozen policy",
+    "parameter_dtypes": {
+      "torch.float16": 338,
+      "torch.float32": 112
+    },
+    "devices": {
+      "cuda:0": 450
+    },
+    "loaded_8bit": false,
+    "loaded_4bit": false
+  },
+  "model_loading_seconds": 8.653,
+  "generation_seconds": 1065.668,
+  "timing_note": "generation seconds cover only batches generated in this invocation",
+  "mean_response_tokens": 110.12222222222222,
+  "max_prompt_tokens": 48,
+  "memory_before": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  },
+  "peak_cuda_allocated_gib": 2.934,
+  "peak_cuda_reserved_gib": 3.143,
+  "memory_after_release": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  }
+}

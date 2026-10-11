@@ -1,0 +1,35 @@
+{
+  "policy": "sft",
+  "signature": "743a751fe17e72d7db5b9a6569eb864fb08ab1ec502dc0e44e4759a822e34bc4",
+  "status": "PASS",
+  "records": 450,
+  "new_records_this_invocation": 450,
+  "generated_sha256": "a24037939e6129f89b9fdaf55e5aeddfee67cf33f231b564396b3b4724f6a070",
+  "adapter_sha256": null,
+  "model": {
+    "name": "sft frozen policy",
+    "parameter_dtypes": {
+      "torch.float16": 338
+    },
+    "devices": {
+      "cuda:0": 338
+    },
+    "loaded_8bit": false,
+    "loaded_4bit": false
+  },
+  "model_loading_seconds": 5.477,
+  "generation_seconds": 822.694,
+  "timing_note": "generation seconds cover only batches generated in this invocation",
+  "mean_response_tokens": 107.82888888888888,
+  "max_prompt_tokens": 48,
+  "memory_before": {
+    "allocated_gib": 0.0,
+    "reserved_gib": 0.0
+  },
+  "peak_cuda_allocated_gib": 2.929,
+  "peak_cuda_reserved_gib": 3.143,
+  "memory_after_release": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  }
+}

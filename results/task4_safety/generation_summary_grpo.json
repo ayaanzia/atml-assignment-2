@@ -1,0 +1,36 @@
+{
+  "policy": "grpo",
+  "signature": "511bfb60f7890c0e48800d62889a93b0b27943b27884ca00ad269a0dd6409965",
+  "status": "PASS",
+  "records": 450,
+  "new_records_this_invocation": 450,
+  "generated_sha256": "60d6b1535252977fc9940d1635e5b444be91ea2be67b711a8ecadd245a34341c",
+  "adapter_sha256": "cfa711d8932a35bf04176529b93c64e5943223504dc3731007159caf0cb084bd",
+  "model": {
+    "name": "grpo frozen policy",
+    "parameter_dtypes": {
+      "torch.float16": 338,
+      "torch.float32": 112
+    },
+    "devices": {
+      "cuda:0": 450
+    },
+    "loaded_8bit": false,
+    "loaded_4bit": false
+  },
+  "model_loading_seconds": 5.055,
+  "generation_seconds": 1051.721,
+  "timing_note": "generation seconds cover only batches generated in this invocation",
+  "mean_response_tokens": 108.4,
+  "max_prompt_tokens": 48,
+  "memory_before": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  },
+  "peak_cuda_allocated_gib": 2.933,
+  "peak_cuda_reserved_gib": 3.143,
+  "memory_after_release": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  }
+}

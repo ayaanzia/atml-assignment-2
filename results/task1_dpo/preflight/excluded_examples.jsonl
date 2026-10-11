@@ -1,0 +1,2 @@
+{"file_position": 2, "source_index": 49298, "prompt_id": "e14d5ba9f8d00a203e7cc3e044f3d3bc4ad429024898c59e0c6a1009e7fb1f18", "length_stratum": null, "reason": "prompt_exceeds_sequence_cap", "prompt_tokens": 999}
+{"file_position": 9, "source_index": 27947, "prompt_id": "6f58a8714956c4ece492f013f93cf719484852f1e355ede1b79f028807938111", "length_stratum": null, "reason": "prompt_exceeds_sequence_cap", "prompt_tokens": 1072}

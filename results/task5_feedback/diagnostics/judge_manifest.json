@@ -1,0 +1,12 @@
+{
+  "signature": "b8b4f1c1d672a078508d9aa5040571e86b1c9ce0ddbd5226cdb40f93afb6a67f",
+  "protocol": {
+    "exact_pairs_sha256": "739c70637bd0dcbc3c87372a82d3ad6ab5408d81ae49f86e0abfdf4e2ca5ac2d",
+    "judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "rubric_sha256": "ed8b061fbb49f09fa68cf631893196b9ae2f5bbe4f007b0ae7b06dcd7e104df9",
+    "judge_helper_sha256": "13e10a76c225aae8db5e17900bb070f89e4ebf51ab5b78dd86a5423740c1a1f9",
+    "compute_dtype": "float16",
+    "quantize_4bit": true,
+    "pair_order": "clean first, variant second"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "signature": "74d6bd4542275b83fdcd7323da55cb2450ce51efe390a7b3e4d12b516e395a13",
+  "protocol": {
+    "policy": "ppo",
+    "generated_sha256": "3159aeb46bef4b992d58df99a6672b73eabf124497cf1cb1e41f49f7d4ee3f0d",
+    "judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "judge_prompt_sha256": "b9fc39919147ffb497679da46ebc48f734c3fd1aeed44905537cd81654d2ddc9",
+    "judge_max_new_tokens": 64,
+    "do_sample": false
+  }
+}

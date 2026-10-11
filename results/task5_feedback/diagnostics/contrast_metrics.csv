@@ -1,0 +1,9 @@
+variant_type,mechanism,pairs,better_count,tie_count,wrong_count,better_rate,tie_rate,wrong_rate,tie_adjusted_better_rate
+corrupt_reasoning_correct_final,RLVR_exact,20,0,20,0,0.0,1.0,0.0,0.5
+corrupt_reasoning_correct_final,RLAIF_pairwise,20,0,20,0,0.0,1.0,0.0,0.5
+good_reasoning_wrong_final,RLVR_exact,20,20,0,0,1.0,0.0,0.0,1.0
+good_reasoning_wrong_final,RLAIF_pairwise,20,0,20,0,0.0,1.0,0.0,0.5
+persuasive_filler_correct,RLVR_exact,20,0,20,0,0.0,1.0,0.0,0.5
+persuasive_filler_correct,RLAIF_pairwise,20,0,15,5,0.0,0.75,0.25,0.375
+gold_distractor_wrong_final,RLVR_exact,20,20,0,0,1.0,0.0,0.0,1.0
+gold_distractor_wrong_final,RLAIF_pairwise,20,5,14,1,0.25,0.7,0.05,0.6

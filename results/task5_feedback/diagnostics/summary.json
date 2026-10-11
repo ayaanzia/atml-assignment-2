@@ -1,0 +1,192 @@
+{
+  "status": "COMPLETE",
+  "fixed_problems": 20,
+  "fixed_variants": 100,
+  "fixed_contrast_pairs": 80,
+  "exact_summary_sha256": "7fb86a2e63c2b91d496c98ad4e7120d9a233102041d73c271eb1613199a6d61d",
+  "judge_status": "PASS",
+  "judge_detail": {
+    "status": "PASS",
+    "signature": "b8b4f1c1d672a078508d9aa5040571e86b1c9ce0ddbd5226cdb40f93afb6a67f",
+    "pairs": 80,
+    "new_pairs_this_invocation": 80,
+    "judged_pairs_sha256": "7fc6f31af6b0be66d02e0c8fec4675ad26b74c91fb3cef5f5223c67f1491c51a",
+    "judge_model": {
+      "name": "fixed Task 5 diagnostic pairwise judge",
+      "parameter_dtypes": {
+        "torch.float16": 182,
+        "torch.uint8": 252
+      },
+      "devices": {
+        "cuda:0": 434
+      },
+      "loaded_8bit": false,
+      "loaded_4bit": true,
+      "model_commit_hash": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    },
+    "model_loading_seconds": 12.02,
+    "judging_seconds": 22.59,
+    "timing_note": "judging seconds cover only new pairs in this invocation",
+    "judge_cache_hits": 0,
+    "new_judge_inferences": 80,
+    "ties_include_possible_parse_failures": true,
+    "memory_before": {
+      "allocated_gib": 0.0,
+      "reserved_gib": 0.0
+    },
+    "peak_cuda_allocated_gib": 2.873,
+    "peak_cuda_reserved_gib": 2.951,
+    "memory_after_release": {
+      "allocated_gib": 0.009,
+      "reserved_gib": 2.875
+    }
+  },
+  "variant_baselines": [
+    {
+      "variant_type": "clean_correct",
+      "responses": 20,
+      "exact_positive_count": 20.0,
+      "exact_positive_rate": 1.0,
+      "reference_role": "clean baseline"
+    },
+    {
+      "variant_type": "corrupt_reasoning_correct_final",
+      "responses": 20,
+      "exact_positive_count": 20.0,
+      "exact_positive_rate": 1.0,
+      "reference_role": "contrast to clean"
+    },
+    {
+      "variant_type": "good_reasoning_wrong_final",
+      "responses": 20,
+      "exact_positive_count": 0.0,
+      "exact_positive_rate": 0.0,
+      "reference_role": "contrast to clean"
+    },
+    {
+      "variant_type": "persuasive_filler_correct",
+      "responses": 20,
+      "exact_positive_count": 20.0,
+      "exact_positive_rate": 1.0,
+      "reference_role": "contrast to clean"
+    },
+    {
+      "variant_type": "gold_distractor_wrong_final",
+      "responses": 20,
+      "exact_positive_count": 0.0,
+      "exact_positive_rate": 0.0,
+      "reference_role": "contrast to clean"
+    }
+  ],
+  "contrasts": [
+    {
+      "variant_type": "corrupt_reasoning_correct_final",
+      "mechanism": "RLVR_exact",
+      "pairs": 20,
+      "better_count": 0,
+      "tie_count": 20,
+      "wrong_count": 0,
+      "better_rate": 0.0,
+      "tie_rate": 1.0,
+      "wrong_rate": 0.0,
+      "tie_adjusted_better_rate": 0.5
+    },
+    {
+      "variant_type": "corrupt_reasoning_correct_final",
+      "mechanism": "RLAIF_pairwise",
+      "pairs": 20,
+      "better_count": 0,
+      "tie_count": 20,
+      "wrong_count": 0,
+      "better_rate": 0.0,
+      "tie_rate": 1.0,
+      "wrong_rate": 0.0,
+      "tie_adjusted_better_rate": 0.5
+    },
+    {
+      "variant_type": "good_reasoning_wrong_final",
+      "mechanism": "RLVR_exact",
+      "pairs": 20,
+      "better_count": 20,
+      "tie_count": 0,
+      "wrong_count": 0,
+      "better_rate": 1.0,
+      "tie_rate": 0.0,
+      "wrong_rate": 0.0,
+      "tie_adjusted_better_rate": 1.0
+    },
+    {
+      "variant_type": "good_reasoning_wrong_final",
+      "mechanism": "RLAIF_pairwise",
+      "pairs": 20,
+      "better_count": 0,
+      "tie_count": 20,
+      "wrong_count": 0,
+      "better_rate": 0.0,
+      "tie_rate": 1.0,
+      "wrong_rate": 0.0,
+      "tie_adjusted_better_rate": 0.5
+    },
+    {
+      "variant_type": "persuasive_filler_correct",
+      "mechanism": "RLVR_exact",
+      "pairs": 20,
+      "better_count": 0,
+      "tie_count": 20,
+      "wrong_count": 0,
+      "better_rate": 0.0,
+      "tie_rate": 1.0,
+      "wrong_rate": 0.0,
+      "tie_adjusted_better_rate": 0.5
+    },
+    {
+      "variant_type": "persuasive_filler_correct",
+      "mechanism": "RLAIF_pairwise",
+      "pairs": 20,
+      "better_count": 0,
+      "tie_count": 15,
+      "wrong_count": 5,
+      "better_rate": 0.0,
+      "tie_rate": 0.75,
+      "wrong_rate": 0.25,
+      "tie_adjusted_better_rate": 0.375
+    },
+    {
+      "variant_type": "gold_distractor_wrong_final",
+      "mechanism": "RLVR_exact",
+      "pairs": 20,
+      "better_count": 20,
+      "tie_count": 0,
+      "wrong_count": 0,
+      "better_rate": 1.0,
+      "tie_rate": 0.0,
+      "wrong_rate": 0.0,
+      "tie_adjusted_better_rate": 1.0
+    },
+    {
+      "variant_type": "gold_distractor_wrong_final",
+      "mechanism": "RLAIF_pairwise",
+      "pairs": 20,
+      "better_count": 5,
+      "tie_count": 14,
+      "wrong_count": 1,
+      "better_rate": 0.25,
+      "tie_rate": 0.7,
+      "wrong_rate": 0.05,
+      "tie_adjusted_better_rate": 0.6
+    }
+  ],
+  "sensitivity": {
+    "RLVR_exact": {
+      "Sreason": 0.0,
+      "Soutcome": 1.0
+    },
+    "RLAIF_pairwise": {
+      "Sreason": 0.0,
+      "Soutcome": 0.0
+    }
+  },
+  "clean_reference_note": "Clean is the reference; no better-response pair exists for clean alone",
+  "ai_tie_limitation": "The fixed judge maps unparseable answers to TIE",
+  "qualitative_note": "Review the saved disagreements for reasoning, filler, and distractor cases"
+}

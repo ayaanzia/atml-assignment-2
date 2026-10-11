@@ -1,0 +1,6 @@
+variant_type,responses,exact_positive_count,exact_positive_rate,reference_role
+clean_correct,20,20.0,1.0,clean baseline
+corrupt_reasoning_correct_final,20,20.0,1.0,contrast to clean
+good_reasoning_wrong_final,20,0.0,0.0,contrast to clean
+persuasive_filler_correct,20,20.0,1.0,contrast to clean
+gold_distractor_wrong_final,20,0.0,0.0,contrast to clean

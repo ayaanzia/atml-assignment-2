@@ -52,13 +52,19 @@ def ppo_policy_loss(new_logp, old_logp, advantage, mask, eps=0.2):
     surr1 = ratio * advantage
     surr2 = ratio.clamp(1.0 - eps, 1.0 + eps) * advantage
 
-    # Starter implementation: students must validate the clipping geometry carefully.
-    objective = torch.maximum(surr1, surr2)
+    objective = torch.minimum(surr1, surr2)
 
     loss = -masked_mean(objective, mask)
     affected = ((ratio < (1.0 - eps)) | (ratio > (1.0 + eps))).float()
     clip_fraction = masked_mean(affected, mask)
     return loss, ratio.detach(), clip_fraction.detach()
+
+
+def affected_token_fraction(ratio, advantage, mask, eps=0.2):
+    """Fraction where clipping actually lowers the signed PPO surrogate."""
+    unclipped = ratio * advantage
+    clipped = ratio.clamp(1.0 - eps, 1.0 + eps) * advantage
+    return masked_mean((clipped < unclipped).float(), mask)
 
 
 def value_mse_loss(predicted_values, returns, mask):

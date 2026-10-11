@@ -1,0 +1,130 @@
+{
+  "status": "COMPLETE",
+  "dataset": "gsm",
+  "fixed_prompts": 300,
+  "dataset_sha256": "6f323b667fc7158d77aa66bf417466f11986f4cc2ba71ca4e9f5b77b5cb2af42",
+  "generation_protocol": {
+    "seed": 6304,
+    "decoding": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "max_new_tokens": 512,
+    "prompt_handling": "full fixed messages; no truncation"
+  },
+  "policies": [
+    {
+      "policy": "sft",
+      "status": "PASS",
+      "metrics": {
+        "prompts": 300,
+        "exact_correct": 86,
+        "exact_accuracy": 0.2866666666666667,
+        "format_compliant_count": 117,
+        "format_compliance_rate": 0.39,
+        "mean_response_tokens": 280.82,
+        "std_response_tokens": 96.67813058460187,
+        "generated_response_tokens": 84246,
+        "eos_rate": 0.95,
+        "generation_cap_rate": 0.05,
+        "failure_counts": {
+          "correct": 86,
+          "wrong_designated_final": 31,
+          "missing_designated_final": 183
+        }
+      }
+    },
+    {
+      "policy": "rlvr",
+      "status": "PASS",
+      "metrics": {
+        "prompts": 300,
+        "exact_correct": 93,
+        "exact_accuracy": 0.31,
+        "format_compliant_count": 128,
+        "format_compliance_rate": 0.4266666666666667,
+        "mean_response_tokens": 278.09,
+        "std_response_tokens": 95.03123293598443,
+        "generated_response_tokens": 83427,
+        "eos_rate": 0.9666666666666667,
+        "generation_cap_rate": 0.03333333333333333,
+        "failure_counts": {
+          "correct": 93,
+          "wrong_designated_final": 35,
+          "missing_designated_final": 172
+        }
+      }
+    },
+    {
+      "policy": "rlaif",
+      "status": "PASS",
+      "metrics": {
+        "prompts": 300,
+        "exact_correct": 91,
+        "exact_accuracy": 0.30333333333333334,
+        "format_compliant_count": 122,
+        "format_compliance_rate": 0.4066666666666667,
+        "mean_response_tokens": 279.87333333333333,
+        "std_response_tokens": 97.17786419184613,
+        "generated_response_tokens": 83962,
+        "eos_rate": 0.95,
+        "generation_cap_rate": 0.05,
+        "failure_counts": {
+          "correct": 91,
+          "wrong_designated_final": 31,
+          "missing_designated_final": 178
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "competitor": "rlvr",
+      "status": "PASS",
+      "metrics": {
+        "prompts": 300,
+        "ai_wins_vs_sft": 10,
+        "ai_ties_vs_sft": 283,
+        "ai_losses_vs_sft": 7,
+        "ai_win_rate_vs_sft": 0.505,
+        "ai_strict_win_rate_vs_sft": 0.03333333333333333,
+        "ai_tie_rate_vs_sft": 0.9433333333333334,
+        "verifier_judge_three_way_agreement": 0.9166666666666666,
+        "verifier_decisive_pairs": 9,
+        "judge_agreement_on_decisive_pairs": 0.0,
+        "verifier_tie_pairs": 291,
+        "judge_prefers_competitor_on_verifier_tie": 10,
+        "judge_prefers_sft_on_verifier_tie": 6,
+        "judge_ties_on_verifier_tie": 275,
+        "judge_cache_hits": 0,
+        "new_judge_inferences": 300,
+        "tie_limitation": "fixed judge maps unparseable output to TIE"
+      }
+    },
+    {
+      "competitor": "rlaif",
+      "status": "PASS",
+      "metrics": {
+        "prompts": 300,
+        "ai_wins_vs_sft": 12,
+        "ai_ties_vs_sft": 281,
+        "ai_losses_vs_sft": 7,
+        "ai_win_rate_vs_sft": 0.5083333333333333,
+        "ai_strict_win_rate_vs_sft": 0.04,
+        "ai_tie_rate_vs_sft": 0.9366666666666666,
+        "verifier_judge_three_way_agreement": 0.9066666666666666,
+        "verifier_decisive_pairs": 9,
+        "judge_agreement_on_decisive_pairs": 0.0,
+        "verifier_tie_pairs": 291,
+        "judge_prefers_competitor_on_verifier_tie": 12,
+        "judge_prefers_sft_on_verifier_tie": 7,
+        "judge_ties_on_verifier_tie": 272,
+        "judge_cache_hits": 237,
+        "new_judge_inferences": 63,
+        "tie_limitation": "fixed judge maps unparseable output to TIE"
+      }
+    }
+  ],
+  "qualitative_note": "Review verifier/judge disagreements; AI judgments are not ground truth"
+}

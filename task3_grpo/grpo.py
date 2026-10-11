@@ -11,10 +11,23 @@ def group_relative_advantages(rewards: torch.Tensor, group_ids: torch.Tensor, ep
     `group_ids[i]` identifies which prompt produced reward `rewards[i]`.
     Validate this implementation against the group-relative definition in the assignment manual.
     """
-    # Starter implementation: students must validate the grouping logic carefully.
-    mean = rewards.mean()
-    std = rewards.std(unbiased=False).clamp_min(eps)
-    return (rewards - mean) / std
+    if rewards.ndim != 1 or group_ids.ndim != 1 or rewards.shape != group_ids.shape:
+        raise ValueError("rewards and group_ids must be matching one-dimensional tensors")
+    if rewards.numel() == 0:
+        raise ValueError("A GRPO batch needs at least one completion")
+    if not bool(torch.isfinite(rewards).all().item()):
+        raise ValueError("Group rewards must be finite")
+    advantages = torch.empty_like(rewards)
+    for group in torch.unique(group_ids):
+        selected = group_ids == group
+        values = rewards[selected]
+        std = values.std(unbiased=False)
+        # Sub-tolerance reward differences cannot supply a reliable ranking.
+        advantages[selected] = (
+            torch.zeros_like(values) if float(std.item()) <= eps
+            else (values - values.mean()) / std
+        )
+    return advantages
 
 
 def grpo_policy_loss(
@@ -33,8 +46,12 @@ def grpo_policy_loss(
     `token_mask` may be all-zero for a completion that was deliberately masked because it hit the
     maximum generation length.
     """
-    ratio = torch.exp(new_logp - old_logp)
-    adv = seq_adv[:, None]
+    if new_logp.shape != old_logp.shape or new_logp.shape != ref_logp.shape or new_logp.shape != token_mask.shape:
+        raise ValueError("GRPO log-probability and token-mask shapes must match")
+    if seq_adv.ndim != 1 or seq_adv.shape[0] != new_logp.shape[0]:
+        raise ValueError("Need one advantage per completion")
+    ratio = torch.exp(new_logp.float() - old_logp.float())
+    adv = seq_adv.float()[:, None]
     s1 = ratio * adv
     s2 = ratio.clamp(1.0 - eps, 1.0 + eps) * adv
     objective = torch.minimum(s1, s2)
@@ -45,22 +62,24 @@ def grpo_policy_loss(
         per_sequence = token_sum / denom
         policy_term = -per_sequence.mean()
     elif loss_type == "dr_grpo":
-        if max_completion_length is None:
-            raise ValueError("dr_grpo requires max_completion_length")
+        if max_completion_length is None or max_completion_length < 1:
+            raise ValueError("dr_grpo requires a positive max_completion_length")
         # Constant normalization rather than dividing by each response's realized length.
         per_sequence = token_sum / float(max_completion_length)
         policy_term = -per_sequence.mean()
     else:
         raise ValueError(f"Unknown loss_type={loss_type!r}")
 
-    log_ratio_ref_over_policy = ref_logp - new_logp
+    log_ratio_ref_over_policy = ref_logp.float() - new_logp.float()
     per_token_kl = torch.exp(log_ratio_ref_over_policy) - log_ratio_ref_over_policy - 1.0
     kl = masked_mean(per_token_kl, token_mask)
     loss = policy_term + float(beta) * kl
     affected = ((ratio < (1.0 - eps)) | (ratio > (1.0 + eps))).float()
     return loss, {
         "policy_term": policy_term.detach(),
-        "sampled_kl": kl.detach(),
+        "per_sequence_policy_term": (-per_sequence).detach(),
+        "kl_penalty": kl.detach(),
+        "sampled_kl": kl.detach(),  # Legacy key: the objective uses a nonnegative KL estimator.
         "clip_fraction": masked_mean(affected, token_mask).detach(),
         "ratio_mean": masked_mean(ratio.detach(), token_mask),
         "sample_entropy": sample_entropy(new_logp.detach(), token_mask),

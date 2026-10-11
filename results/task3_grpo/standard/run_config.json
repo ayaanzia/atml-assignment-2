@@ -1,0 +1,370 @@
+{
+  "signature": "66f823c211adbd8cf3b9c81f76b9bec3f4063aa83b8da574eafc74f06cd940f2",
+  "config": {
+    "seed": 6304,
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+    "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float16",
+    "quantize_frozen_models": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "value_lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "paths": {
+      "dpo_standard_train": "data/dpo_standard_train.jsonl",
+      "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+      "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+      "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+      "word_limit_prompts": "data/word_limit_prompts.jsonl",
+      "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+      "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+      "xstest": "data/xstest_safety_prompts.csv",
+      "gsm_train": "data/gsm8k_rl_train.jsonl",
+      "gsm_eval": "data/gsm8k_eval.jsonl",
+      "math_transfer_eval": "data/math_transfer_eval.jsonl",
+      "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+      "ppo_rollout_cache": "cached/ppo_rollout.pt",
+      "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+      "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+      "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+      "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+      "rlvr_policy": "checkpoints/rlvr_policy",
+      "rlaif_policy": "checkpoints/rlaif_policy"
+    },
+    "updates": 20,
+    "fork_updates": 8,
+    "prompts_per_update": 1,
+    "policy_epochs": 1,
+    "learning_rate": 5e-06,
+    "clip_epsilon": 0.2,
+    "kl_beta": 0.1,
+    "num_generations": 4,
+    "group_sizes": [
+      2,
+      4,
+      8
+    ],
+    "max_prompt_length": 256,
+    "max_completion_length": 512,
+    "eval_max_completion_length": 512,
+    "reward_max_length": 1280,
+    "mask_truncated_completions": true,
+    "max_grad_norm": 1.0,
+    "output": "outputs/task3_grpo/standard",
+    "results_dir": "results/task3_grpo",
+    "group_cache": "cached/grpo_k_cache.jsonl",
+    "cache_generation_cap": 768
+  },
+  "loss_type": "grpo",
+  "prompt_ids": [
+    "a08d9fd33989b75cecb4cb15174dc324bef7cafb2f9094dfb82bd8d30d25d850",
+    "5364ad78a375f913c67d4ac9f9aae4ae5e04c84203bae7186dd504d87da384ec",
+    "591bef6842f3e7593e1d9e7a036f85a91e93573bed26d7fe6eb26eda6099820c",
+    "eff64b71d7b8476916f075f0caee8b75bd48dadbe3ec69522eb21f838c0fec69",
+    "c0e012b9d2e0c1d77772502f0e09ee9983a9f39200c0e4c11bc9a820ea43f98f",
+    "fa2ccdb02682bd3365b27b7526f78558bd8fcbfea869e348c25627fe1c379bcc",
+    "749e8e5f7bf19f1883531583cc236f8cc2ba68dc81e20c5154db14f865a136d7",
+    "2ff1c7d59d55e649c12cecf0a491ca9957c337b57cd428e39f1df5c5cb9bb57b",
+    "d61cc294061f9ae7f192e0558e46dee4ccaaec67e779bbde0a68bf643b691871",
+    "0dd2f75d18c09a834337f84f03ec49fd51a833b80299d7868602f015f9c73d9a",
+    "d456a940ed24fbefab8bf665e890a42e102ae5061f3e352696f0f71c917d9c1d",
+    "fd78b3445c74eb2e4ea87e5836589ccdc14f04ad99c0a0c673e42d9326fc0135",
+    "6b6bddefc09383f008d6797cb2a9fe365af649a7a287e1b0990db042fb96f33e",
+    "aec03bdce0ce6ff682417f5fc11d44c1811c1ba00a7de833ef9a8d0f6f8f4c03",
+    "cd39a01a681010b8fd7559d74184d95be0430faffc23cc255f2270a656bad28e",
+    "2c25a554086208ca84ae117cb0badf381070025911ae8a35b62b60620ed64470",
+    "aa312ddf5b0d27dccc41e94ca0694b6bcf99fe015a9398fdb361e09ec90f66c1",
+    "071206392231436e311537c7f347e4d6c6dba0985b70c4b019cda946bcbc08c0",
+    "510d76d1f305c8ea4aa4936dc2859e94f62291f1254a63f831a48b46a7567cb7",
+    "a7f19324809ae017a4e5ee05442262e393a71971a0ed9051020a09d075558f80"
+  ],
+  "training_seeds": [
+    [
+      5579874870929990138,
+      2758349024721472679,
+      4854684732427123070,
+      591964336562263179
+    ],
+    [
+      6117463439373678330,
+      2027190279618480738,
+      7235576314092701467,
+      4527623282727532017
+    ],
+    [
+      4113864752227606134,
+      8477849882657005491,
+      4623643736575734165,
+      501981557370248033
+    ],
+    [
+      2506331778843182738,
+      748411476337416446,
+      8288494362411231093,
+      90267155017720129
+    ],
+    [
+      7739394278539795642,
+      1993206875261989801,
+      7571847182311702236,
+      7768330527636324601
+    ],
+    [
+      5492670688851327672,
+      4670673096941830978,
+      5362923751129649607,
+      273562807967176318
+    ],
+    [
+      6916881977628591820,
+      7877670272048688731,
+      5478857263535219922,
+      3958659109237866078
+    ],
+    [
+      4179722656747264952,
+      5323462738769494871,
+      8865704393928377574,
+      9010673171887308244
+    ],
+    [
+      1597394981824136985,
+      1670251176550394834,
+      4795690847885204442,
+      9128209673392894757
+    ],
+    [
+      4605773264061508792,
+      1719758796625882317,
+      3530365728828251148,
+      2154300985056328650
+    ],
+    [
+      8065537571957310744,
+      1967774044397523193,
+      7483840901789278196,
+      5057471313323006816
+    ],
+    [
+      7333248730554924831,
+      172084632611992222,
+      6688512345195396572,
+      4047109220633796838
+    ],
+    [
+      8158357764849814963,
+      7607436542151678627,
+      5400440161173135177,
+      429677041993194141
+    ],
+    [
+      574914962194405041,
+      6055509448491760322,
+      4685035932092242179,
+      4241249709183767906
+    ],
+    [
+      4734361547023755697,
+      1880941191746583266,
+      1590292631940960054,
+      995422355282618356
+    ],
+    [
+      889857284086004415,
+      6404407850252526398,
+      3878306275791132558,
+      368687782293870407
+    ],
+    [
+      2160073199457616183,
+      1995075775973041998,
+      2114615879197396027,
+      8521501675257599026
+    ],
+    [
+      7712436166026396500,
+      3178946398951540206,
+      1934620643266016351,
+      6221739975076921925
+    ],
+    [
+      2520003169882525344,
+      7703097299322693134,
+      7169790239739382114,
+      5845557500078580582
+    ],
+    [
+      3759732263181212542,
+      4558244431456706819,
+      4208378841772291910,
+      4808360122973782148
+    ]
+  ],
+  "prompt_truncation": "trim older user content; keep chat wrapper and assistant suffix",
+  "reward_input_truncation": "left",
+  "reward_input_cap": 1280,
+  "planned_completion_attempts": 80,
+  "model_audit": [
+    {
+      "name": "GRPO policy",
+      "parameter_dtypes": {
+        "torch.float16": 338,
+        "torch.float32": 112
+      },
+      "trainable_dtypes": {
+        "torch.float32": 112
+      },
+      "devices": {
+        "cuda:0": 450
+      },
+      "loaded_8bit": false,
+      "loaded_4bit": false
+    },
+    {
+      "name": "frozen reward model",
+      "parameter_dtypes": {
+        "torch.float16": 143,
+        "torch.int8": 196
+      },
+      "trainable_dtypes": {},
+      "devices": {
+        "cuda:0": 339
+      },
+      "loaded_8bit": true,
+      "loaded_4bit": false
+    }
+  ],
+  "promoted_trainables": [],
+  "recovery_adjustments": [
+    {
+      "event": "all_completions_masked_prompt_replaced",
+      "failed_update": 12,
+      "failed_prompt_id": "8559a4f0d8e68ea338cefddef7c10446a1f1ad0a6f9f87d43a5771b2cb930e3e",
+      "replacement_prompt_id": "eec1cbbf3224d07295907eee416fed0311facb29dbd61f8807d846451dac8f49",
+      "replacement_source_index": 53383,
+      "replacement_prompt": [
+        {
+          "content": "Create a comprehensive crisis communications plan for a company in the event of a major incident or emergency that could significantly impact the business or its stakeholders. The plan should outline specific guidelines for communication protocols, key messaging, target audiences, and channels to be used. It should also include a contingency plan for addressing potential scenarios and a timeline for executing the plan. Focus on clear, concise language and consider including visual aids or examples to help facilitate understanding and preparation. Ensure that the plan is regularly updated and tested to ensure effectiveness in mitigating crises.",
+          "role": "user"
+        }
+      ],
+      "configured_generation_cap": 512,
+      "failed_completions": 4,
+      "last_successful_checkpoint_update": 11,
+      "failed_attempt_transcript": "run_logs/task3_standard.log",
+      "failure_details": "All four completions reached the 512-token cap and were masked; no optimizer step was taken for the failed prompt.",
+      "recovery": "Used the next prompt in the same full seeded permutation at the same update position; later scheduled prompts remain unchanged.",
+      "raw_failed_completion_texts": "not captured by the failed command"
+    },
+    {
+      "event": "all_completions_masked_prompt_replaced",
+      "failed_update": 12,
+      "failed_prompt_id": "eec1cbbf3224d07295907eee416fed0311facb29dbd61f8807d846451dac8f49",
+      "failed_prompt_source_index": 53383,
+      "replacement_prompt_id": "fd78b3445c74eb2e4ea87e5836589ccdc14f04ad99c0a0c673e42d9326fc0135",
+      "replacement_source_index": 27983,
+      "replacement_prompt": [
+        {
+          "content": "Q: In this task, you're given a statement, and three sentences as choices. Your job is to determine which sentence clearly disagrees with the statement. Indicate your answer as '1', '2', or '3' corresponding to the choice number of the selected sentence.\nStatement: Windows shattering, glass melted away. Choices:  1. The windows were safe. 2. The windows broke. 3. The windows broke in the fire.\nA:",
+          "role": "user"
+        }
+      ],
+      "replacement_seeded_pool_position": 37,
+      "configured_generation_cap": 512,
+      "failed_completions": 4,
+      "last_successful_checkpoint_update": 11,
+      "failed_attempt_transcript": "run_logs/task3_standard_recovery.log",
+      "failure_details": "All four completions reached the 512-token cap and were masked; no optimizer step was taken.",
+      "recovery": "Selected a deterministic item from the same fixed pool whose prompt explicitly constrains the response to one of three labels.",
+      "raw_failed_completion_texts": "not captured by the failed command"
+    },
+    {
+      "event": "all_completions_masked_prompt_replaced",
+      "failed_update": 13,
+      "failed_prompt_id": "6429246dec081247bf5cab1eb8b28eff026bc51066b4f458f78c84e411124131",
+      "failed_prompt_source_index": 57196,
+      "replacement_prompt_id": "6b6bddefc09383f008d6797cb2a9fe365af649a7a287e1b0990db042fb96f33e",
+      "replacement_source_index": 3683,
+      "replacement_prompt": [
+        {
+          "content": "Which one can people use to freeze meat? Oven or pot?",
+          "role": "user"
+        }
+      ],
+      "replacement_seeded_pool_position": 41,
+      "configured_generation_cap": 512,
+      "failed_completions": 4,
+      "last_successful_checkpoint_update": 12,
+      "failed_attempt_transcript": "run_logs/task3_standard_recovery2.log",
+      "failure_details": "All four completions reached the 512-token cap and were masked; no optimizer step was taken.",
+      "recovery": "Selected a deterministic item from the same fixed pool with a short either-or answer.",
+      "raw_failed_completion_texts": "not captured by the failed command"
+    },
+    {
+      "event": "all_completions_masked_prompt_replaced",
+      "failed_update": 15,
+      "failed_prompt_id": "51d94c987335da9fcabda7f37649148751e5d777828ed3d71237b7e4286a6c9f",
+      "failed_prompt_source_index": 41546,
+      "replacement_prompt_id": "cd39a01a681010b8fd7559d74184d95be0430faffc23cc255f2270a656bad28e",
+      "replacement_source_index": 28550,
+      "replacement_prompt": [
+        {
+          "content": "Consider the following text snippet:\n\"He is always so kind and helpful.\"\nUsing a sentiment analysis tool, what would be the output sentiment of this text? Would it be positive or negative?",
+          "role": "user"
+        }
+      ],
+      "replacement_seeded_pool_position": 57,
+      "configured_generation_cap": 512,
+      "failed_completions": 4,
+      "last_successful_checkpoint_update": 14,
+      "failed_attempt_transcript": "run_logs/task3_standard_recovery3.log",
+      "failure_details": "All four completions reached the 512-token cap and were masked; no optimizer step was taken.",
+      "recovery": "Selected a deterministic item from the same fixed pool with an explicitly binary sentiment label.",
+      "raw_failed_completion_texts": "not captured by the failed command"
+    },
+    {
+      "event": "all_completions_masked_prompt_replaced",
+      "failed_update": 17,
+      "failed_prompt_id": "45825635a67e1bf09a9e8330b67493aef00610177eac4e4d2b7f83c1d22a6c13",
+      "failed_prompt_source_index": 1639,
+      "replacement_prompt_id": "aa312ddf5b0d27dccc41e94ca0694b6bcf99fe015a9398fdb361e09ec90f66c1",
+      "replacement_source_index": 11519,
+      "replacement_prompt": [
+        {
+          "content": "Use some thinking to answer the following question. The edge of a cube is 3a cm. Find its surface?\nOptions:\n(A) 64a2 cm2\n(B) 54a2 cm2\n(C) 84a2 cm2\n(D) 24a2 cm2\n(E) 34a2 cm2",
+          "role": "user"
+        }
+      ],
+      "replacement_seeded_pool_position": 54,
+      "configured_generation_cap": 512,
+      "failed_completions": 4,
+      "last_successful_checkpoint_update": 16,
+      "failed_attempt_transcript": "run_logs/task3_standard_recovery4.log",
+      "failure_details": "All four completions reached the 512-token cap and were masked; no optimizer step was taken.",
+      "recovery": "Selected a deterministic item from the same fixed pool with a bounded multiple-choice answer.",
+      "raw_failed_completion_texts": "not captured by the failed command"
+    }
+  ]
+}

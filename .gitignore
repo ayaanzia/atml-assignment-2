@@ -4,6 +4,7 @@ __pycache__/
 .ipynb_checkpoints/
 .venv/
 venv/
+venv
 
 # Caches
 .cache/
@@ -13,6 +14,10 @@ wandb/
 
 # Student outputs
 outputs/
+
+# Full console transcripts, remote transfer archives, and setup diagnostics.
+# Machine-readable task results remain under results/ and stay trackable.
+/run_logs/
 
 # Downloaded course assets
 cached/*
@@ -25,6 +30,19 @@ data/*
 !data/README.md
 !data/word_limit_prompts.jsonl
 
+# Audit deblinding key (the labeled/joined audit results are retained)
+results/task4_safety/manual_audit_key.csv
+
 # Misc
 *.zip
 .DS_Store
+*.pdf
+/rough/
+
+# Local credentials and environment secrets
+.env
+.env.*
+!.env.example
+id_ed25519
+id_rsa
+*.pem

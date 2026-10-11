@@ -1,0 +1,25 @@
+{
+  "dataset": "transfer",
+  "competitors": [
+    {
+      "competitor": "rlvr",
+      "status": "PASS",
+      "records": 100
+    },
+    {
+      "competitor": "rlaif",
+      "status": "PASS",
+      "records": 100
+    }
+  ],
+  "complete": true,
+  "model_loading_seconds": 4.799,
+  "memory_before": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  },
+  "memory_after_release": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  }
+}

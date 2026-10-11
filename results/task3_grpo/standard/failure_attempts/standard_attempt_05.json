@@ -1,0 +1,8 @@
+{
+  "run_name": "standard",
+  "error_type": "ValueError",
+  "error_message": "Every completion was masked at the generation cap for 45825635a67e1bf09a9e8330b67493aef00610177eac4e4d2b7f83c1d22a6c13",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/atml-pa2-t34/task3_grpo/continue_train.py\", line 341, in run_grpo\n    rollout = _collect_rollout(bundle, row, cfg, update_index)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/atml-pa2-t34/task3_grpo/continue_train.py\", line 133, in _collect_rollout\n    raise ValueError(f\"Every completion was masked at the generation cap for {row['prompt_id']}\")\nValueError: Every completion was masked at the generation cap for 45825635a67e1bf09a9e8330b67493aef00610177eac4e4d2b7f83c1d22a6c13\n",
+  "last_completed_update": 16,
+  "resumable_state": "/workspace/atml-pa2-t34/outputs/task3_grpo/standard/latest_state.pt"
+}

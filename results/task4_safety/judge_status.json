@@ -1,0 +1,34 @@
+{
+  "policies": [
+    {
+      "policy": "sft",
+      "status": "PASS",
+      "records": 450
+    },
+    {
+      "policy": "dpo",
+      "status": "PASS",
+      "records": 450
+    },
+    {
+      "policy": "ppo",
+      "status": "PASS",
+      "records": 450
+    },
+    {
+      "policy": "grpo",
+      "status": "PASS",
+      "records": 450
+    }
+  ],
+  "four_policy_judging_complete": true,
+  "memory_before": {
+    "allocated_gib": 0.0,
+    "reserved_gib": 0.0
+  },
+  "memory_after_release": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 2.875
+  },
+  "judge_model_loading_seconds": 71.299
+}

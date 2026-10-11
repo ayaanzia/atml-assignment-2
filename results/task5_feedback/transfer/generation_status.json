@@ -1,0 +1,21 @@
+{
+  "dataset": "transfer",
+  "policies": [
+    {
+      "policy": "sft",
+      "status": "PASS",
+      "records": 100
+    },
+    {
+      "policy": "rlvr",
+      "status": "PASS",
+      "records": 100
+    },
+    {
+      "policy": "rlaif",
+      "status": "PASS",
+      "records": 100
+    }
+  ],
+  "requested_generation_complete": true
+}

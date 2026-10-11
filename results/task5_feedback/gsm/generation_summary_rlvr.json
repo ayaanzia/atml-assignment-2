@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "dataset": "gsm",
+  "policy": "rlvr",
+  "signature": "bf2d3650ad2bd138d93e213cbf3c8ee82460776e9a11e374a88778c572d49993",
+  "records": 300,
+  "new_records_this_invocation": 300,
+  "generated_sha256": "d26f3e48c462d987680ff7234931c3161b80c7b7ea2d06e05f13e6340ed32723",
+  "adapter_sha256": "a3ee02432c0a896d0a8896b2664e530e7fbed600a2e0c2a411efe4ef130a42a4",
+  "model": {
+    "name": "gsm/rlvr frozen policy",
+    "parameter_dtypes": {
+      "torch.float16": 338,
+      "torch.float32": 112
+    },
+    "devices": {
+      "cuda:0": 450
+    },
+    "loaded_8bit": false,
+    "loaded_4bit": false,
+    "model_commit_hash": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+  },
+  "model_loading_seconds": 23.927,
+  "generation_seconds": 4551.691,
+  "timing_note": "generation seconds cover only new prompts in this invocation",
+  "max_prompt_tokens": 239,
+  "max_response_tokens": 512,
+  "memory_before": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  },
+  "peak_cuda_allocated_gib": 2.921,
+  "peak_cuda_reserved_gib": 3.121,
+  "memory_after_release": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  }
+}

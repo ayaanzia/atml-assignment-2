@@ -1,0 +1,21 @@
+{
+  "signature": "3133dbcb683eb173f7152f75bc6af4eeef4b1823a4c90fcaeea61cb2737eec59",
+  "protocol": {
+    "dataset": "transfer",
+    "policy": "rlaif",
+    "dataset_sha256": "d500a339dba8fcd02c8bd5fc5e353090b20c1b1db0d37e60717bc488475bb319",
+    "verifier_source_sha256": "f8865f7d6c67dc4d0565b182411383f0ec2ed9d01a0f99198ad2db0c31ec1bff",
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter": "checkpoints/rlaif_policy",
+    "adapter_sha256": "ae59f862c4b75608735d0bbeec22c4ed0cf319ee7e475d230d4cffe36a354175",
+    "storage_dtype": "float16",
+    "seed": 6304,
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "max_new_tokens": 512,
+    "prompt_handling": "render fixed messages without truncation"
+  }
+}

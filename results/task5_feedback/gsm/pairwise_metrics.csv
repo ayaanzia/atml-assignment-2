@@ -1,0 +1,3 @@
+competitor,prompts,ai_wins_vs_sft,ai_ties_vs_sft,ai_losses_vs_sft,ai_win_rate_vs_sft,ai_strict_win_rate_vs_sft,ai_tie_rate_vs_sft,verifier_judge_three_way_agreement,verifier_decisive_pairs,judge_agreement_on_decisive_pairs,verifier_tie_pairs,judge_prefers_competitor_on_verifier_tie,judge_prefers_sft_on_verifier_tie,judge_ties_on_verifier_tie,judge_cache_hits,new_judge_inferences,tie_limitation
+rlvr,300,10,283,7,0.505,0.03333333333333333,0.9433333333333334,0.9166666666666666,9,0.0,291,10,6,275,0,300,fixed judge maps unparseable output to TIE
+rlaif,300,12,281,7,0.5083333333333333,0.04,0.9366666666666666,0.9066666666666666,9,0.0,291,12,7,272,237,63,fixed judge maps unparseable output to TIE

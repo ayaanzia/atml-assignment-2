@@ -1,0 +1,58 @@
+{
+  "name": "clip_0p20",
+  "adapter": "/kaggle/working/atml_pa2/outputs/task2_ppo/clip_0p20",
+  "adapter_sha256": "8fde97cfaf353cbe64594db2cd4822b32fdb757061e6b087c4f5e6a2ce33baa0",
+  "metrics": {
+    "prompts": 200,
+    "mean_raw_reward": 1.697633056640625,
+    "std_raw_reward": 1.1811707760681918,
+    "sampled_kl_token_mean": -9.81119769034697e-06,
+    "token_entropy_mean": 1.0162891367623188,
+    "total_usable_response_tokens": 56893,
+    "mean_response_tokens": 284.465,
+    "std_response_tokens": 246.2058057296781,
+    "generated_response_tokens": 56893,
+    "eos_rate": 0.915,
+    "generation_cap_rate": 0.085,
+    "prompt_truncated_count": 35,
+    "reward_input_truncated_count": 2
+  },
+  "models": [
+    {
+      "name": "policy",
+      "parameter_dtypes": {
+        "torch.float16": 338,
+        "torch.float32": 112
+      },
+      "trainable_dtypes": {},
+      "devices": {
+        "cuda:0": 450
+      },
+      "loaded_8bit": false,
+      "loaded_4bit": false
+    },
+    {
+      "name": "reward_model",
+      "parameter_dtypes": {
+        "torch.float16": 143,
+        "torch.int8": 196
+      },
+      "trainable_dtypes": {},
+      "devices": {
+        "cuda:0": 169,
+        "cuda:1": 170
+      },
+      "loaded_8bit": true,
+      "loaded_4bit": false
+    }
+  ],
+  "autocast_dtype": "torch.float16",
+  "prompt_truncation": "trim older user content; preserve chat wrapper and assistant suffix",
+  "model_loading_seconds": 7.754,
+  "generation_seconds": 2491.155,
+  "scoring_seconds": 107.708,
+  "new_records_this_invocation": 200,
+  "timing_note": "stage seconds cover newly processed records in this invocation; cached records are excluded",
+  "peak_cuda_allocated_gib": 5.117,
+  "peak_cuda_reserved_gib": 6.891
+}

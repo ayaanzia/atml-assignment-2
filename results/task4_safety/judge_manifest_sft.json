@@ -1,0 +1,11 @@
+{
+  "signature": "30f483f2f9b2bfa41b7ef95ea57c0d581741f09e52b0ec02322229a02c62684b",
+  "protocol": {
+    "policy": "sft",
+    "generated_sha256": "a24037939e6129f89b9fdaf55e5aeddfee67cf33f231b564396b3b4724f6a070",
+    "judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "judge_prompt_sha256": "b9fc39919147ffb497679da46ebc48f734c3fd1aeed44905537cd81654d2ddc9",
+    "judge_max_new_tokens": 64,
+    "do_sample": false
+  }
+}

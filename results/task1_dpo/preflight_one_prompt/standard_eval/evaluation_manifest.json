@@ -1,0 +1,25 @@
+{
+  "signature": "b9b82b9587a67e6443fae4d071d64d2d7890d641fe4aa3ba14b59155daaf53cd",
+  "name": "preflight_one_prompt",
+  "dataset": "standard",
+  "adapter": "/workspace/atml-pa2-working/outputs/task1_dpo/preflight",
+  "adapter_sha256": "a9a4c635a1676bcd739b0db17ef3a32f121be99250b1528202bd7c3a3ace4af4",
+  "pair_file": "/workspace/atml-pa2-working/run_logs/tasks/task1_preflight/one_prompt_eval.jsonl",
+  "prompt_ids": [
+    {
+      "file_position": 0,
+      "prompt_id": "c4f8c8d58e4d3a89d69adf1898cf59c951b9af63936ed8ab6eff222020e86800",
+      "source_index": 435
+    }
+  ],
+  "word_limit_ids": [],
+  "beta": 0.1,
+  "seed": 6304,
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "do_sample": true
+  },
+  "max_generation_tokens": 256,
+  "sampled_kl_averaging": "response-token mean"
+}

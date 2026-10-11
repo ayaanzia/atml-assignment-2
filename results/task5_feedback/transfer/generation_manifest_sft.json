@@ -1,0 +1,21 @@
+{
+  "signature": "be9d586dbf7e6709f7c9d3340ec7e692c254815c93dc75a2fe9244582cca078d",
+  "protocol": {
+    "dataset": "transfer",
+    "policy": "sft",
+    "dataset_sha256": "d500a339dba8fcd02c8bd5fc5e353090b20c1b1db0d37e60717bc488475bb319",
+    "verifier_source_sha256": "f8865f7d6c67dc4d0565b182411383f0ec2ed9d01a0f99198ad2db0c31ec1bff",
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter": null,
+    "adapter_sha256": null,
+    "storage_dtype": "float16",
+    "seed": 6304,
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "max_new_tokens": 512,
+    "prompt_handling": "render fixed messages without truncation"
+  }
+}

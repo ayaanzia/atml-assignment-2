@@ -1,0 +1,25 @@
+{
+  "dataset": "gsm",
+  "competitors": [
+    {
+      "competitor": "rlvr",
+      "status": "PASS",
+      "records": 300
+    },
+    {
+      "competitor": "rlaif",
+      "status": "PASS",
+      "records": 300
+    }
+  ],
+  "complete": true,
+  "model_loading_seconds": 4.833,
+  "memory_before": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  },
+  "memory_after_release": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  }
+}

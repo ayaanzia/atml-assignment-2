@@ -1,0 +1,409 @@
+{
+  "status": "COMPLETE",
+  "stages": [
+    {
+      "stage": "gsm",
+      "status": "PASS"
+    },
+    {
+      "stage": "transfer",
+      "status": "PASS"
+    },
+    {
+      "stage": "diagnostics",
+      "status": "PASS"
+    }
+  ],
+  "domains": {
+    "gsm": {
+      "dataset": "gsm",
+      "fixed_prompts": 300,
+      "dataset_sha256": "6f323b667fc7158d77aa66bf417466f11986f4cc2ba71ca4e9f5b77b5cb2af42",
+      "policies": {
+        "sft": {
+          "prompts": 300,
+          "exact_correct": 86,
+          "exact_accuracy": 0.2866666666666667,
+          "format_compliant_count": 117,
+          "format_compliance_rate": 0.39,
+          "mean_response_tokens": 280.82,
+          "std_response_tokens": 96.67813058460187,
+          "generated_response_tokens": 84246,
+          "eos_rate": 0.95,
+          "generation_cap_rate": 0.05,
+          "failure_counts": {
+            "correct": 86,
+            "wrong_designated_final": 31,
+            "missing_designated_final": 183
+          }
+        },
+        "rlvr": {
+          "prompts": 300,
+          "exact_correct": 93,
+          "exact_accuracy": 0.31,
+          "format_compliant_count": 128,
+          "format_compliance_rate": 0.4266666666666667,
+          "mean_response_tokens": 278.09,
+          "std_response_tokens": 95.03123293598443,
+          "generated_response_tokens": 83427,
+          "eos_rate": 0.9666666666666667,
+          "generation_cap_rate": 0.03333333333333333,
+          "failure_counts": {
+            "correct": 93,
+            "wrong_designated_final": 35,
+            "missing_designated_final": 172
+          }
+        },
+        "rlaif": {
+          "prompts": 300,
+          "exact_correct": 91,
+          "exact_accuracy": 0.30333333333333334,
+          "format_compliant_count": 122,
+          "format_compliance_rate": 0.4066666666666667,
+          "mean_response_tokens": 279.87333333333333,
+          "std_response_tokens": 97.17786419184613,
+          "generated_response_tokens": 83962,
+          "eos_rate": 0.95,
+          "generation_cap_rate": 0.05,
+          "failure_counts": {
+            "correct": 91,
+            "wrong_designated_final": 31,
+            "missing_designated_final": 178
+          }
+        }
+      },
+      "comparisons": {
+        "rlvr": {
+          "prompts": 300,
+          "ai_wins_vs_sft": 10,
+          "ai_ties_vs_sft": 283,
+          "ai_losses_vs_sft": 7,
+          "ai_win_rate_vs_sft": 0.505,
+          "ai_strict_win_rate_vs_sft": 0.03333333333333333,
+          "ai_tie_rate_vs_sft": 0.9433333333333334,
+          "verifier_judge_three_way_agreement": 0.9166666666666666,
+          "verifier_decisive_pairs": 9,
+          "judge_agreement_on_decisive_pairs": 0.0,
+          "verifier_tie_pairs": 291,
+          "judge_prefers_competitor_on_verifier_tie": 10,
+          "judge_prefers_sft_on_verifier_tie": 6,
+          "judge_ties_on_verifier_tie": 275,
+          "judge_cache_hits": 0,
+          "new_judge_inferences": 300,
+          "tie_limitation": "fixed judge maps unparseable output to TIE"
+        },
+        "rlaif": {
+          "prompts": 300,
+          "ai_wins_vs_sft": 12,
+          "ai_ties_vs_sft": 281,
+          "ai_losses_vs_sft": 7,
+          "ai_win_rate_vs_sft": 0.5083333333333333,
+          "ai_strict_win_rate_vs_sft": 0.04,
+          "ai_tie_rate_vs_sft": 0.9366666666666666,
+          "verifier_judge_three_way_agreement": 0.9066666666666666,
+          "verifier_decisive_pairs": 9,
+          "judge_agreement_on_decisive_pairs": 0.0,
+          "verifier_tie_pairs": 291,
+          "judge_prefers_competitor_on_verifier_tie": 12,
+          "judge_prefers_sft_on_verifier_tie": 7,
+          "judge_ties_on_verifier_tie": 272,
+          "judge_cache_hits": 237,
+          "new_judge_inferences": 63,
+          "tie_limitation": "fixed judge maps unparseable output to TIE"
+        }
+      }
+    },
+    "transfer": {
+      "dataset": "transfer",
+      "fixed_prompts": 100,
+      "dataset_sha256": "d500a339dba8fcd02c8bd5fc5e353090b20c1b1db0d37e60717bc488475bb319",
+      "policies": {
+        "sft": {
+          "prompts": 100,
+          "exact_correct": 48,
+          "exact_accuracy": 0.48,
+          "format_compliant_count": 57,
+          "format_compliance_rate": 0.57,
+          "mean_response_tokens": 167.88,
+          "std_response_tokens": 90.0407996410516,
+          "generated_response_tokens": 16788,
+          "eos_rate": 0.98,
+          "generation_cap_rate": 0.02,
+          "failure_counts": {
+            "correct": 48,
+            "wrong_designated_final": 9,
+            "missing_designated_final": 43
+          }
+        },
+        "rlvr": {
+          "prompts": 100,
+          "exact_correct": 50,
+          "exact_accuracy": 0.5,
+          "format_compliant_count": 57,
+          "format_compliance_rate": 0.57,
+          "mean_response_tokens": 171.97,
+          "std_response_tokens": 95.70208513924867,
+          "generated_response_tokens": 17197,
+          "eos_rate": 0.98,
+          "generation_cap_rate": 0.02,
+          "failure_counts": {
+            "correct": 50,
+            "wrong_designated_final": 7,
+            "missing_designated_final": 43
+          }
+        },
+        "rlaif": {
+          "prompts": 100,
+          "exact_correct": 49,
+          "exact_accuracy": 0.49,
+          "format_compliant_count": 56,
+          "format_compliance_rate": 0.56,
+          "mean_response_tokens": 172.28,
+          "std_response_tokens": 98.8628423625378,
+          "generated_response_tokens": 17228,
+          "eos_rate": 0.98,
+          "generation_cap_rate": 0.02,
+          "failure_counts": {
+            "correct": 49,
+            "wrong_designated_final": 7,
+            "missing_designated_final": 44
+          }
+        }
+      },
+      "comparisons": {
+        "rlvr": {
+          "prompts": 100,
+          "ai_wins_vs_sft": 18,
+          "ai_ties_vs_sft": 75,
+          "ai_losses_vs_sft": 7,
+          "ai_win_rate_vs_sft": 0.555,
+          "ai_strict_win_rate_vs_sft": 0.18,
+          "ai_tie_rate_vs_sft": 0.75,
+          "verifier_judge_three_way_agreement": 0.74,
+          "verifier_decisive_pairs": 6,
+          "judge_agreement_on_decisive_pairs": 0.3333333333333333,
+          "verifier_tie_pairs": 94,
+          "judge_prefers_competitor_on_verifier_tie": 16,
+          "judge_prefers_sft_on_verifier_tie": 6,
+          "judge_ties_on_verifier_tie": 72,
+          "judge_cache_hits": 0,
+          "new_judge_inferences": 100,
+          "tie_limitation": "fixed judge maps unparseable output to TIE"
+        },
+        "rlaif": {
+          "prompts": 100,
+          "ai_wins_vs_sft": 18,
+          "ai_ties_vs_sft": 74,
+          "ai_losses_vs_sft": 8,
+          "ai_win_rate_vs_sft": 0.55,
+          "ai_strict_win_rate_vs_sft": 0.18,
+          "ai_tie_rate_vs_sft": 0.74,
+          "verifier_judge_three_way_agreement": 0.72,
+          "verifier_decisive_pairs": 5,
+          "judge_agreement_on_decisive_pairs": 0.2,
+          "verifier_tie_pairs": 95,
+          "judge_prefers_competitor_on_verifier_tie": 16,
+          "judge_prefers_sft_on_verifier_tie": 8,
+          "judge_ties_on_verifier_tie": 71,
+          "judge_cache_hits": 85,
+          "new_judge_inferences": 15,
+          "tie_limitation": "fixed judge maps unparseable output to TIE"
+        }
+      }
+    }
+  },
+  "diagnostics": {
+    "fixed_problems": 20,
+    "variants": 100,
+    "pairs": 80,
+    "sensitivity": {
+      "RLVR_exact": {
+        "Sreason": 0.0,
+        "Soutcome": 1.0
+      },
+      "RLAIF_pairwise": {
+        "Sreason": 0.0,
+        "Soutcome": 0.0
+      }
+    },
+    "contrasts": [
+      {
+        "variant_type": "corrupt_reasoning_correct_final",
+        "mechanism": "RLVR_exact",
+        "pairs": 20,
+        "better_count": 0,
+        "tie_count": 20,
+        "wrong_count": 0,
+        "better_rate": 0.0,
+        "tie_rate": 1.0,
+        "wrong_rate": 0.0,
+        "tie_adjusted_better_rate": 0.5
+      },
+      {
+        "variant_type": "corrupt_reasoning_correct_final",
+        "mechanism": "RLAIF_pairwise",
+        "pairs": 20,
+        "better_count": 0,
+        "tie_count": 20,
+        "wrong_count": 0,
+        "better_rate": 0.0,
+        "tie_rate": 1.0,
+        "wrong_rate": 0.0,
+        "tie_adjusted_better_rate": 0.5
+      },
+      {
+        "variant_type": "good_reasoning_wrong_final",
+        "mechanism": "RLVR_exact",
+        "pairs": 20,
+        "better_count": 20,
+        "tie_count": 0,
+        "wrong_count": 0,
+        "better_rate": 1.0,
+        "tie_rate": 0.0,
+        "wrong_rate": 0.0,
+        "tie_adjusted_better_rate": 1.0
+      },
+      {
+        "variant_type": "good_reasoning_wrong_final",
+        "mechanism": "RLAIF_pairwise",
+        "pairs": 20,
+        "better_count": 0,
+        "tie_count": 20,
+        "wrong_count": 0,
+        "better_rate": 0.0,
+        "tie_rate": 1.0,
+        "wrong_rate": 0.0,
+        "tie_adjusted_better_rate": 0.5
+      },
+      {
+        "variant_type": "persuasive_filler_correct",
+        "mechanism": "RLVR_exact",
+        "pairs": 20,
+        "better_count": 0,
+        "tie_count": 20,
+        "wrong_count": 0,
+        "better_rate": 0.0,
+        "tie_rate": 1.0,
+        "wrong_rate": 0.0,
+        "tie_adjusted_better_rate": 0.5
+      },
+      {
+        "variant_type": "persuasive_filler_correct",
+        "mechanism": "RLAIF_pairwise",
+        "pairs": 20,
+        "better_count": 0,
+        "tie_count": 15,
+        "wrong_count": 5,
+        "better_rate": 0.0,
+        "tie_rate": 0.75,
+        "wrong_rate": 0.25,
+        "tie_adjusted_better_rate": 0.375
+      },
+      {
+        "variant_type": "gold_distractor_wrong_final",
+        "mechanism": "RLVR_exact",
+        "pairs": 20,
+        "better_count": 20,
+        "tie_count": 0,
+        "wrong_count": 0,
+        "better_rate": 1.0,
+        "tie_rate": 0.0,
+        "wrong_rate": 0.0,
+        "tie_adjusted_better_rate": 1.0
+      },
+      {
+        "variant_type": "gold_distractor_wrong_final",
+        "mechanism": "RLAIF_pairwise",
+        "pairs": 20,
+        "better_count": 5,
+        "tie_count": 14,
+        "wrong_count": 1,
+        "better_rate": 0.25,
+        "tie_rate": 0.7,
+        "wrong_rate": 0.05,
+        "tie_adjusted_better_rate": 0.6
+      }
+    ]
+  },
+  "transfer_comparison": [
+    {
+      "policy": "sft",
+      "gsm_exact_accuracy": 0.2866666666666667,
+      "transfer_exact_accuracy": 0.48,
+      "accuracy_drop_gsm_minus_transfer": -0.1933333333333333,
+      "gsm_format_compliance": 0.39,
+      "transfer_format_compliance": 0.57,
+      "format_drop_gsm_minus_transfer": -0.17999999999999994,
+      "gsm_mean_response_tokens": 280.82,
+      "transfer_mean_response_tokens": 167.88,
+      "length_shift_transfer_minus_gsm": -112.94,
+      "gsm_failure_counts": {
+        "correct": 86,
+        "wrong_designated_final": 31,
+        "missing_designated_final": 183
+      },
+      "transfer_failure_counts": {
+        "correct": 48,
+        "wrong_designated_final": 9,
+        "missing_designated_final": 43
+      }
+    },
+    {
+      "policy": "rlvr",
+      "gsm_exact_accuracy": 0.31,
+      "transfer_exact_accuracy": 0.5,
+      "accuracy_drop_gsm_minus_transfer": -0.19,
+      "gsm_format_compliance": 0.4266666666666667,
+      "transfer_format_compliance": 0.57,
+      "format_drop_gsm_minus_transfer": -0.14333333333333326,
+      "gsm_mean_response_tokens": 278.09,
+      "transfer_mean_response_tokens": 171.97,
+      "length_shift_transfer_minus_gsm": -106.11999999999998,
+      "gsm_failure_counts": {
+        "correct": 93,
+        "wrong_designated_final": 35,
+        "missing_designated_final": 172
+      },
+      "transfer_failure_counts": {
+        "correct": 50,
+        "wrong_designated_final": 7,
+        "missing_designated_final": 43
+      },
+      "gsm_ai_win_rate_vs_sft": 0.505,
+      "transfer_ai_win_rate_vs_sft": 0.555,
+      "ai_win_rate_drop_gsm_minus_transfer": -0.050000000000000044
+    },
+    {
+      "policy": "rlaif",
+      "gsm_exact_accuracy": 0.30333333333333334,
+      "transfer_exact_accuracy": 0.49,
+      "accuracy_drop_gsm_minus_transfer": -0.18666666666666665,
+      "gsm_format_compliance": 0.4066666666666667,
+      "transfer_format_compliance": 0.56,
+      "format_drop_gsm_minus_transfer": -0.15333333333333338,
+      "gsm_mean_response_tokens": 279.87333333333333,
+      "transfer_mean_response_tokens": 172.28,
+      "length_shift_transfer_minus_gsm": -107.59333333333333,
+      "gsm_failure_counts": {
+        "correct": 91,
+        "wrong_designated_final": 31,
+        "missing_designated_final": 178
+      },
+      "transfer_failure_counts": {
+        "correct": 49,
+        "wrong_designated_final": 7,
+        "missing_designated_final": 44
+      },
+      "gsm_ai_win_rate_vs_sft": 0.5083333333333333,
+      "transfer_ai_win_rate_vs_sft": 0.55,
+      "ai_win_rate_drop_gsm_minus_transfer": -0.04166666666666674
+    }
+  ],
+  "scale_warning": "Binary exact accuracy and pairwise AI win rate are different scales",
+  "judge_tie_limitation": "The fixed judge maps unparseable output to TIE",
+  "qualitative_sources": {
+    "gsm": "/workspace/atml-pa2-t34/results/task5_feedback/gsm/verifier_judge_disagreements.jsonl",
+    "transfer": "/workspace/atml-pa2-t34/results/task5_feedback/transfer/verifier_judge_disagreements.jsonl",
+    "diagnostics": "/workspace/atml-pa2-t34/results/task5_feedback/diagnostics/verifier_judge_disagreements.jsonl"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "signature": "2669bf2c01d15e4e4017dadbce207ad8a00e09a1a11197d431c0cced5aceb399",
+  "protocol": {
+    "diagnostic_data_sha256": "2336c3879ec87a279420caf6eac8123831a8ce74e318c2b87a0e29d8e77a963b",
+    "verifier_source_sha256": "f8865f7d6c67dc4d0565b182411383f0ec2ed9d01a0f99198ad2db0c31ec1bff",
+    "pairing": "clean_correct versus each of four variants, clean first"
+  }
+}

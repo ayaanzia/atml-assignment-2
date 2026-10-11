@@ -1,0 +1,130 @@
+{
+  "status": "COMPLETE",
+  "dataset": "transfer",
+  "fixed_prompts": 100,
+  "dataset_sha256": "d500a339dba8fcd02c8bd5fc5e353090b20c1b1db0d37e60717bc488475bb319",
+  "generation_protocol": {
+    "seed": 6304,
+    "decoding": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "max_new_tokens": 512,
+    "prompt_handling": "full fixed messages; no truncation"
+  },
+  "policies": [
+    {
+      "policy": "sft",
+      "status": "PASS",
+      "metrics": {
+        "prompts": 100,
+        "exact_correct": 48,
+        "exact_accuracy": 0.48,
+        "format_compliant_count": 57,
+        "format_compliance_rate": 0.57,
+        "mean_response_tokens": 167.88,
+        "std_response_tokens": 90.0407996410516,
+        "generated_response_tokens": 16788,
+        "eos_rate": 0.98,
+        "generation_cap_rate": 0.02,
+        "failure_counts": {
+          "correct": 48,
+          "wrong_designated_final": 9,
+          "missing_designated_final": 43
+        }
+      }
+    },
+    {
+      "policy": "rlvr",
+      "status": "PASS",
+      "metrics": {
+        "prompts": 100,
+        "exact_correct": 50,
+        "exact_accuracy": 0.5,
+        "format_compliant_count": 57,
+        "format_compliance_rate": 0.57,
+        "mean_response_tokens": 171.97,
+        "std_response_tokens": 95.70208513924867,
+        "generated_response_tokens": 17197,
+        "eos_rate": 0.98,
+        "generation_cap_rate": 0.02,
+        "failure_counts": {
+          "correct": 50,
+          "wrong_designated_final": 7,
+          "missing_designated_final": 43
+        }
+      }
+    },
+    {
+      "policy": "rlaif",
+      "status": "PASS",
+      "metrics": {
+        "prompts": 100,
+        "exact_correct": 49,
+        "exact_accuracy": 0.49,
+        "format_compliant_count": 56,
+        "format_compliance_rate": 0.56,
+        "mean_response_tokens": 172.28,
+        "std_response_tokens": 98.8628423625378,
+        "generated_response_tokens": 17228,
+        "eos_rate": 0.98,
+        "generation_cap_rate": 0.02,
+        "failure_counts": {
+          "correct": 49,
+          "wrong_designated_final": 7,
+          "missing_designated_final": 44
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "competitor": "rlvr",
+      "status": "PASS",
+      "metrics": {
+        "prompts": 100,
+        "ai_wins_vs_sft": 18,
+        "ai_ties_vs_sft": 75,
+        "ai_losses_vs_sft": 7,
+        "ai_win_rate_vs_sft": 0.555,
+        "ai_strict_win_rate_vs_sft": 0.18,
+        "ai_tie_rate_vs_sft": 0.75,
+        "verifier_judge_three_way_agreement": 0.74,
+        "verifier_decisive_pairs": 6,
+        "judge_agreement_on_decisive_pairs": 0.3333333333333333,
+        "verifier_tie_pairs": 94,
+        "judge_prefers_competitor_on_verifier_tie": 16,
+        "judge_prefers_sft_on_verifier_tie": 6,
+        "judge_ties_on_verifier_tie": 72,
+        "judge_cache_hits": 0,
+        "new_judge_inferences": 100,
+        "tie_limitation": "fixed judge maps unparseable output to TIE"
+      }
+    },
+    {
+      "competitor": "rlaif",
+      "status": "PASS",
+      "metrics": {
+        "prompts": 100,
+        "ai_wins_vs_sft": 18,
+        "ai_ties_vs_sft": 74,
+        "ai_losses_vs_sft": 8,
+        "ai_win_rate_vs_sft": 0.55,
+        "ai_strict_win_rate_vs_sft": 0.18,
+        "ai_tie_rate_vs_sft": 0.74,
+        "verifier_judge_three_way_agreement": 0.72,
+        "verifier_decisive_pairs": 5,
+        "judge_agreement_on_decisive_pairs": 0.2,
+        "verifier_tie_pairs": 95,
+        "judge_prefers_competitor_on_verifier_tie": 16,
+        "judge_prefers_sft_on_verifier_tie": 8,
+        "judge_ties_on_verifier_tie": 71,
+        "judge_cache_hits": 85,
+        "new_judge_inferences": 15,
+        "tie_limitation": "fixed judge maps unparseable output to TIE"
+      }
+    }
+  ],
+  "qualitative_note": "Review verifier/judge disagreements; AI judgments are not ground truth"
+}

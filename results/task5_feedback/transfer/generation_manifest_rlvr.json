@@ -1,0 +1,21 @@
+{
+  "signature": "18d97aa804346cbf7963894554dd70736d629464a29c1e792df2f3ae3f7e2a61",
+  "protocol": {
+    "dataset": "transfer",
+    "policy": "rlvr",
+    "dataset_sha256": "d500a339dba8fcd02c8bd5fc5e353090b20c1b1db0d37e60717bc488475bb319",
+    "verifier_source_sha256": "f8865f7d6c67dc4d0565b182411383f0ec2ed9d01a0f99198ad2db0c31ec1bff",
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter": "checkpoints/rlvr_policy",
+    "adapter_sha256": "a3ee02432c0a896d0a8896b2664e530e7fbed600a2e0c2a411efe4ef130a42a4",
+    "storage_dtype": "float16",
+    "seed": 6304,
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "max_new_tokens": 512,
+    "prompt_handling": "render fixed messages without truncation"
+  }
+}

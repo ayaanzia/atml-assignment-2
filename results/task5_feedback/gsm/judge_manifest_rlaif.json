@@ -1,0 +1,18 @@
+{
+  "signature": "b4983318dc7922cfd07958cef9b5ab79e84602053f67c2dc3d899339a97af664",
+  "protocol": {
+    "dataset": "gsm",
+    "competitor": "rlaif",
+    "generated_sha256": {
+      "sft": "df81217f99e76610903dc9c5452dd2bccc5aeaf9c61b23ca8deff8c65b9c2d32",
+      "rlaif": "02ab78ac0110b540918bef02b64ae65a4c56f9f16f4d221782c2489ac403d61c"
+    },
+    "judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "judge_rubric_sha256": "ed8b061fbb49f09fa68cf631893196b9ae2f5bbe4f007b0ae7b06dcd7e104df9",
+    "judge_helper_sha256": "13e10a76c225aae8db5e17900bb070f89e4ebf51ab5b78dd86a5423740c1a1f9",
+    "compute_dtype": "float16",
+    "quantize_4bit": true,
+    "comparison_order": "SFT first, competitor second",
+    "tie_rule": "one-half win"
+  }
+}

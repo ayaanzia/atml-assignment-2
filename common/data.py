@@ -98,6 +98,20 @@ def render_prompt(tokenizer, messages: list[dict]) -> str:
     )
 
 
+def chat_template_token_ids(tokenizer, messages: list[dict]) -> list[int]:
+    """Return token IDs across tokenizer versions that wrap them in a mapping."""
+    encoded = tokenizer.apply_chat_template(
+        messages,
+        tokenize=True,
+        add_generation_prompt=True,
+    )
+    if hasattr(encoded, "keys") and "input_ids" in encoded:
+        encoded = encoded["input_ids"]
+    if len(encoded) == 1 and isinstance(encoded[0], list):
+        encoded = encoded[0]
+    return list(encoded)
+
+
 def encode_prompt_response(
     tokenizer,
     messages: list[dict],
@@ -112,11 +126,7 @@ def encode_prompt_response(
     from the right rather than removing prompt/question tokens.
     """
 
-    prompt_ids = tokenizer.apply_chat_template(
-        messages,
-        tokenize=True,
-        add_generation_prompt=True,
-    )
+    prompt_ids = chat_template_token_ids(tokenizer, messages)
 
     # A DPO example is meaningful only if we can condition on the prompt.
     if len(prompt_ids) >= max_length:

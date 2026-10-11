@@ -1,0 +1,7 @@
+condition,stratum,pairs,mean_dpo_loss,preference_accuracy
+standard,length_matched,80,0.6851746004074812,0.5875
+standard,preferred_longer,78,0.6984697160048362,0.46153846153846156
+standard,rejected_longer,79,0.6606925427913666,0.6708860759493671
+length_balanced,length_matched,80,0.6792421836405993,0.5875
+length_balanced,preferred_longer,78,0.7215582032998403,0.46153846153846156
+length_balanced,rejected_longer,79,0.6282266004930569,0.759493670886076

@@ -1,0 +1,68 @@
+{
+  "name": "beta_0p10",
+  "dataset": "standard",
+  "adapter": "/workspace/atml-pa2-working/outputs/task1_dpo/beta_0p10",
+  "adapter_sha256": "858341f071e18bd091caf3b19e2d6cc2915bcb5fa421bdc33aadbca8363a23c6",
+  "beta": 0.1,
+  "pair_selection": {
+    "eligible_pairs": 290,
+    "excluded_prompt_pairs": 10,
+    "selected_ids_sha256": "aa1f6271dd1a6e64c78253534dd41db04ccf11ac0822c70385dee1054ea8c106",
+    "strata": {
+      "None": 290
+    },
+    "chosen_truncated_pairs": 36,
+    "rejected_truncated_pairs": 31,
+    "max_processed_sequence_tokens": 768
+  },
+  "pair_metrics": {
+    "pairs": 290,
+    "mean_dpo_loss": 0.6864973557406459,
+    "preference_accuracy": 0.6172413793103448
+  },
+  "generation_metrics": {
+    "prompts": 300,
+    "mean_reward_model_score": 1.1511130221684773,
+    "sampled_kl_token_mean": -8.750534122335873e-06,
+    "sampled_kl_averaging": "sum(policy minus reference logp over response tokens) / total response tokens",
+    "mean_response_tokens": 157.13,
+    "std_response_tokens": 104.68272589114214,
+    "total_response_tokens": 47139,
+    "max_response_tokens": 256,
+    "reward_input_truncated_count": 10
+  },
+  "generation_max_prompt_tokens": 1877,
+  "generation_max_new_tokens": 256,
+  "word_limit_metrics": null,
+  "loaded_models": {
+    "policy": {
+      "parameter_dtypes": {
+        "torch.float16": 338,
+        "torch.float32": 112
+      },
+      "devices": {
+        "cuda:0": 450
+      },
+      "loaded_8bit": false,
+      "loaded_4bit": false
+    },
+    "reward": {
+      "parameter_dtypes": {
+        "torch.float16": 143,
+        "torch.int8": 196
+      },
+      "devices": {
+        "cuda:0": 339
+      },
+      "loaded_8bit": true,
+      "loaded_4bit": false
+    }
+  },
+  "autocast_dtype": "torch.float16",
+  "model_loading_seconds": 6.027,
+  "pair_scoring_seconds": 83.597,
+  "generation_and_reward_seconds": 3067.763,
+  "word_limit_seconds": 0.0,
+  "peak_cuda_allocated_gib": 5.438,
+  "peak_cuda_reserved_gib": 6.879
+}

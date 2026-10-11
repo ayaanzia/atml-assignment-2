@@ -1,0 +1,272 @@
+{
+  "status": "COMPLETE",
+  "four_policy_comparison_complete": true,
+  "rate_denominators": {
+    "SAFE": 250,
+    "UNSAFE": 200,
+    "ALL": 450,
+    "ambiguous_kept_in_denominators": true
+  },
+  "policies": [
+    {
+      "policy": "sft",
+      "status": "PASS",
+      "metrics": {
+        "safe_prompts": 250,
+        "unsafe_prompts": 200,
+        "safe_answer_rate": 0.58,
+        "safe_over_refusal_rate": 0.0,
+        "unsafe_compliance_rate": 0.0,
+        "unsafe_justified_refusal_rate": 0.875,
+        "ambiguous_judge_rate": 0.0,
+        "parse_failure_rate": 0.0,
+        "parse_failure_count": 0,
+        "mean_response_tokens": 107.82888888888888,
+        "std_response_tokens": 80.46509007630361,
+        "label_counts": {
+          "SAFE_ANSWER": 170,
+          "JUSTIFIED_REFUSAL": 277,
+          "UNSAFE_COMPLIANCE": 3,
+          "OVER_REFUSAL": 0,
+          "AMBIGUOUS": 0
+        }
+      }
+    },
+    {
+      "policy": "dpo",
+      "status": "PASS",
+      "metrics": {
+        "safe_prompts": 250,
+        "unsafe_prompts": 200,
+        "safe_answer_rate": 0.56,
+        "safe_over_refusal_rate": 0.0,
+        "unsafe_compliance_rate": 0.0,
+        "unsafe_justified_refusal_rate": 0.87,
+        "ambiguous_judge_rate": 0.0,
+        "parse_failure_rate": 0.0,
+        "parse_failure_count": 0,
+        "mean_response_tokens": 110.12222222222222,
+        "std_response_tokens": 81.9364561078045,
+        "label_counts": {
+          "SAFE_ANSWER": 166,
+          "JUSTIFIED_REFUSAL": 282,
+          "UNSAFE_COMPLIANCE": 2,
+          "OVER_REFUSAL": 0,
+          "AMBIGUOUS": 0
+        }
+      }
+    },
+    {
+      "policy": "ppo",
+      "status": "PASS",
+      "metrics": {
+        "safe_prompts": 250,
+        "unsafe_prompts": 200,
+        "safe_answer_rate": 0.572,
+        "safe_over_refusal_rate": 0.0,
+        "unsafe_compliance_rate": 0.0,
+        "unsafe_justified_refusal_rate": 0.88,
+        "ambiguous_judge_rate": 0.0,
+        "parse_failure_rate": 0.0,
+        "parse_failure_count": 0,
+        "mean_response_tokens": 107.52222222222223,
+        "std_response_tokens": 79.9942814314148,
+        "label_counts": {
+          "SAFE_ANSWER": 167,
+          "JUSTIFIED_REFUSAL": 280,
+          "UNSAFE_COMPLIANCE": 3,
+          "OVER_REFUSAL": 0,
+          "AMBIGUOUS": 0
+        }
+      }
+    },
+    {
+      "policy": "grpo",
+      "status": "PASS",
+      "metrics": {
+        "safe_prompts": 250,
+        "unsafe_prompts": 200,
+        "safe_answer_rate": 0.588,
+        "safe_over_refusal_rate": 0.0,
+        "unsafe_compliance_rate": 0.0,
+        "unsafe_justified_refusal_rate": 0.88,
+        "ambiguous_judge_rate": 0.0,
+        "parse_failure_rate": 0.0,
+        "parse_failure_count": 0,
+        "mean_response_tokens": 108.4,
+        "std_response_tokens": 80.44434929398915,
+        "label_counts": {
+          "SAFE_ANSWER": 171,
+          "JUSTIFIED_REFUSAL": 276,
+          "UNSAFE_COMPLIANCE": 3,
+          "OVER_REFUSAL": 0,
+          "AMBIGUOUS": 0
+        }
+      }
+    }
+  ],
+  "manual_audit": {
+    "status": "COMPLETE",
+    "required_labels": 240,
+    "filled_labels": 240,
+    "missing_labels": 0,
+    "agreement": 0.7041666666666667,
+    "ai_ambiguous_rate": 0.0,
+    "manual_ambiguous_rate": 0.0125,
+    "by_policy": {
+      "sft": {
+        "judgments": 60,
+        "agreement": 0.7333333333333333,
+        "ai_ambiguous_rate": 0.0,
+        "manual_ambiguous_rate": 0.0
+      },
+      "dpo": {
+        "judgments": 60,
+        "agreement": 0.7166666666666667,
+        "ai_ambiguous_rate": 0.0,
+        "manual_ambiguous_rate": 0.016666666666666666
+      },
+      "ppo": {
+        "judgments": 60,
+        "agreement": 0.65,
+        "ai_ambiguous_rate": 0.0,
+        "manual_ambiguous_rate": 0.03333333333333333
+      },
+      "grpo": {
+        "judgments": 60,
+        "agreement": 0.7166666666666667,
+        "ai_ambiguous_rate": 0.0,
+        "manual_ambiguous_rate": 0.0
+      }
+    },
+    "confusion": [
+      {
+        "manual_label": "SAFE_ANSWER",
+        "ai_label": "SAFE_ANSWER",
+        "count": 55
+      },
+      {
+        "manual_label": "SAFE_ANSWER",
+        "ai_label": "JUSTIFIED_REFUSAL",
+        "count": 16
+      },
+      {
+        "manual_label": "SAFE_ANSWER",
+        "ai_label": "UNSAFE_COMPLIANCE",
+        "count": 0
+      },
+      {
+        "manual_label": "SAFE_ANSWER",
+        "ai_label": "OVER_REFUSAL",
+        "count": 0
+      },
+      {
+        "manual_label": "SAFE_ANSWER",
+        "ai_label": "AMBIGUOUS",
+        "count": 0
+      },
+      {
+        "manual_label": "JUSTIFIED_REFUSAL",
+        "ai_label": "SAFE_ANSWER",
+        "count": 13
+      },
+      {
+        "manual_label": "JUSTIFIED_REFUSAL",
+        "ai_label": "JUSTIFIED_REFUSAL",
+        "count": 114
+      },
+      {
+        "manual_label": "JUSTIFIED_REFUSAL",
+        "ai_label": "UNSAFE_COMPLIANCE",
+        "count": 0
+      },
+      {
+        "manual_label": "JUSTIFIED_REFUSAL",
+        "ai_label": "OVER_REFUSAL",
+        "count": 0
+      },
+      {
+        "manual_label": "JUSTIFIED_REFUSAL",
+        "ai_label": "AMBIGUOUS",
+        "count": 0
+      },
+      {
+        "manual_label": "UNSAFE_COMPLIANCE",
+        "ai_label": "SAFE_ANSWER",
+        "count": 0
+      },
+      {
+        "manual_label": "UNSAFE_COMPLIANCE",
+        "ai_label": "JUSTIFIED_REFUSAL",
+        "count": 0
+      },
+      {
+        "manual_label": "UNSAFE_COMPLIANCE",
+        "ai_label": "UNSAFE_COMPLIANCE",
+        "count": 0
+      },
+      {
+        "manual_label": "UNSAFE_COMPLIANCE",
+        "ai_label": "OVER_REFUSAL",
+        "count": 0
+      },
+      {
+        "manual_label": "UNSAFE_COMPLIANCE",
+        "ai_label": "AMBIGUOUS",
+        "count": 0
+      },
+      {
+        "manual_label": "OVER_REFUSAL",
+        "ai_label": "SAFE_ANSWER",
+        "count": 0
+      },
+      {
+        "manual_label": "OVER_REFUSAL",
+        "ai_label": "JUSTIFIED_REFUSAL",
+        "count": 39
+      },
+      {
+        "manual_label": "OVER_REFUSAL",
+        "ai_label": "UNSAFE_COMPLIANCE",
+        "count": 0
+      },
+      {
+        "manual_label": "OVER_REFUSAL",
+        "ai_label": "OVER_REFUSAL",
+        "count": 0
+      },
+      {
+        "manual_label": "OVER_REFUSAL",
+        "ai_label": "AMBIGUOUS",
+        "count": 0
+      },
+      {
+        "manual_label": "AMBIGUOUS",
+        "ai_label": "SAFE_ANSWER",
+        "count": 2
+      },
+      {
+        "manual_label": "AMBIGUOUS",
+        "ai_label": "JUSTIFIED_REFUSAL",
+        "count": 1
+      },
+      {
+        "manual_label": "AMBIGUOUS",
+        "ai_label": "UNSAFE_COMPLIANCE",
+        "count": 0
+      },
+      {
+        "manual_label": "AMBIGUOUS",
+        "ai_label": "OVER_REFUSAL",
+        "count": 0
+      },
+      {
+        "manual_label": "AMBIGUOUS",
+        "ai_label": "AMBIGUOUS",
+        "count": 0
+      }
+    ]
+  },
+  "manual_audit_sheet": "/mnt/Windows/Ayaan files/parhai/uni/3 fall/ATML/PA2/repo/ATML-PA2-LLM-PostTraining/results/task4_safety/manual_audit_labeled.csv",
+  "qualitative_note": "Disagreement candidates are AI-labeled leads; student must inspect policy behavior and judge errors"
+}

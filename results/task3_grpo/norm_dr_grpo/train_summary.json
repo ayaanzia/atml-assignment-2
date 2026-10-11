@@ -1,0 +1,152 @@
+{
+  "run_name": "norm_dr_grpo",
+  "loss_type": "dr_grpo",
+  "signature": "269f99564cdec598a80b0c936eaba0821d0e6dd72e76f6f1bb146b091e0fda3b",
+  "configuration": {
+    "seed": 6304,
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+    "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float16",
+    "quantize_frozen_models": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "value_lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "paths": {
+      "dpo_standard_train": "data/dpo_standard_train.jsonl",
+      "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+      "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+      "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+      "word_limit_prompts": "data/word_limit_prompts.jsonl",
+      "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+      "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+      "xstest": "data/xstest_safety_prompts.csv",
+      "gsm_train": "data/gsm8k_rl_train.jsonl",
+      "gsm_eval": "data/gsm8k_eval.jsonl",
+      "math_transfer_eval": "data/math_transfer_eval.jsonl",
+      "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+      "ppo_rollout_cache": "cached/ppo_rollout.pt",
+      "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+      "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+      "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+      "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+      "rlvr_policy": "checkpoints/rlvr_policy",
+      "rlaif_policy": "checkpoints/rlaif_policy"
+    },
+    "updates": 8,
+    "fork_updates": 8,
+    "prompts_per_update": 1,
+    "policy_epochs": 1,
+    "learning_rate": 5e-06,
+    "clip_epsilon": 0.2,
+    "kl_beta": 0.1,
+    "num_generations": 4,
+    "group_sizes": [
+      2,
+      4,
+      8
+    ],
+    "max_prompt_length": 256,
+    "max_completion_length": 512,
+    "eval_max_completion_length": 512,
+    "reward_max_length": 1280,
+    "mask_truncated_completions": true,
+    "max_grad_norm": 1.0,
+    "output": "outputs/task3_grpo/standard",
+    "results_dir": "results/task3_grpo",
+    "group_cache": "cached/grpo_k_cache.jsonl",
+    "cache_generation_cap": 768
+  },
+  "prompt_ids": [
+    "a08d9fd33989b75cecb4cb15174dc324bef7cafb2f9094dfb82bd8d30d25d850",
+    "5364ad78a375f913c67d4ac9f9aae4ae5e04c84203bae7186dd504d87da384ec",
+    "591bef6842f3e7593e1d9e7a036f85a91e93573bed26d7fe6eb26eda6099820c",
+    "eff64b71d7b8476916f075f0caee8b75bd48dadbe3ec69522eb21f838c0fec69",
+    "c0e012b9d2e0c1d77772502f0e09ee9983a9f39200c0e4c11bc9a820ea43f98f",
+    "fa2ccdb02682bd3365b27b7526f78558bd8fcbfea869e348c25627fe1c379bcc",
+    "749e8e5f7bf19f1883531583cc236f8cc2ba68dc81e20c5154db14f865a136d7",
+    "2ff1c7d59d55e649c12cecf0a491ca9957c337b57cd428e39f1df5c5cb9bb57b"
+  ],
+  "counters": {
+    "completed_updates": 8,
+    "optimizer_steps": 8,
+    "backward_passes": 25,
+    "generated_completions": 32,
+    "generated_response_tokens": 8691,
+    "usable_response_tokens": 5107,
+    "masked_completions": 7,
+    "uninformative_groups": 0,
+    "truncated_prompts": 3,
+    "truncated_reward_inputs": 0
+  },
+  "mean_raw_reward": 1.0520076751708984,
+  "mean_within_group_reward_std": 0.6301061250269413,
+  "uninformative_group_fraction": 0.0,
+  "relative_reward_signal_inconclusive": false,
+  "mean_sampled_kl_token": 0.00017592262397172844,
+  "mean_token_entropy": 0.8584014753644565,
+  "mean_response_tokens": 271.59375,
+  "logged_generation_seconds": 435.405,
+  "logged_scoring_seconds": 12.631,
+  "logged_optimization_seconds": 5.15,
+  "model_loading_seconds": 9.586,
+  "continuation_seconds": 454.479,
+  "timing_note": "loading/continuation cover this invocation; logged phase seconds include prior resumed updates",
+  "model_audit": [
+    {
+      "name": "GRPO policy",
+      "parameter_dtypes": {
+        "torch.float16": 338,
+        "torch.float32": 112
+      },
+      "trainable_dtypes": {
+        "torch.float32": 112
+      },
+      "devices": {
+        "cuda:0": 450
+      },
+      "loaded_8bit": false,
+      "loaded_4bit": false
+    },
+    {
+      "name": "frozen reward model",
+      "parameter_dtypes": {
+        "torch.float16": 143,
+        "torch.int8": 196
+      },
+      "trainable_dtypes": {},
+      "devices": {
+        "cuda:0": 339
+      },
+      "loaded_8bit": true,
+      "loaded_4bit": false
+    }
+  ],
+  "autocast_dtype": "torch.float16",
+  "peak_cuda_allocated_gib": 7.767,
+  "peak_cuda_reserved_gib": 9.016,
+  "policy_adapter": "/workspace/atml-pa2-t34/outputs/task3_grpo/norm_dr_grpo",
+  "rolling_state": "/workspace/atml-pa2-t34/outputs/task3_grpo/norm_dr_grpo/latest_state.pt"
+}

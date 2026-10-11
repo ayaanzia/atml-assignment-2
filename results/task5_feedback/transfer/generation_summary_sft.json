@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "dataset": "transfer",
+  "policy": "sft",
+  "signature": "be9d586dbf7e6709f7c9d3340ec7e692c254815c93dc75a2fe9244582cca078d",
+  "records": 100,
+  "new_records_this_invocation": 100,
+  "generated_sha256": "a267b131b5ec1d983ecfc2c445498c7ebb0e3a920093275b419388cc422af6fe",
+  "adapter_sha256": null,
+  "model": {
+    "name": "transfer/sft frozen policy",
+    "parameter_dtypes": {
+      "torch.float16": 338
+    },
+    "devices": {
+      "cuda:0": 338
+    },
+    "loaded_8bit": false,
+    "loaded_4bit": false,
+    "model_commit_hash": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+  },
+  "model_loading_seconds": 5.165,
+  "generation_seconds": 646.793,
+  "timing_note": "generation seconds cover only new prompts in this invocation",
+  "max_prompt_tokens": 114,
+  "max_response_tokens": 512,
+  "memory_before": {
+    "allocated_gib": 0.0,
+    "reserved_gib": 0.0
+  },
+  "peak_cuda_allocated_gib": 2.915,
+  "peak_cuda_reserved_gib": 3.1,
+  "memory_after_release": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  }
+}

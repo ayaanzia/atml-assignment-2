@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "dataset": "gsm",
+  "policy": "rlaif",
+  "signature": "fdd9f95a94b25bb386955d1cba9875f14b2e1b553d2fb602070c487fd5e89526",
+  "records": 300,
+  "new_records_this_invocation": 300,
+  "generated_sha256": "02ab78ac0110b540918bef02b64ae65a4c56f9f16f4d221782c2489ac403d61c",
+  "adapter_sha256": "ae59f862c4b75608735d0bbeec22c4ed0cf319ee7e475d230d4cffe36a354175",
+  "model": {
+    "name": "gsm/rlaif frozen policy",
+    "parameter_dtypes": {
+      "torch.float16": 338,
+      "torch.float32": 112
+    },
+    "devices": {
+      "cuda:0": 450
+    },
+    "loaded_8bit": false,
+    "loaded_4bit": false,
+    "model_commit_hash": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+  },
+  "model_loading_seconds": 8.297,
+  "generation_seconds": 4247.215,
+  "timing_note": "generation seconds cover only new prompts in this invocation",
+  "max_prompt_tokens": 239,
+  "max_response_tokens": 512,
+  "memory_before": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  },
+  "peak_cuda_allocated_gib": 2.924,
+  "peak_cuda_reserved_gib": 3.123,
+  "memory_after_release": {
+    "allocated_gib": 0.009,
+    "reserved_gib": 0.021
+  }
+}

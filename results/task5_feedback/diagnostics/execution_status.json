@@ -1,0 +1,21 @@
+{
+  "requested_stage": "all",
+  "completion_scope": "requested stage only; full Task 5 requires diagnostics and both math domains",
+  "stages": [
+    {
+      "stage": "exact",
+      "status": "PASS",
+      "pairs": 80
+    },
+    {
+      "stage": "judge",
+      "status": "PASS",
+      "pairs": 80
+    },
+    {
+      "stage": "aggregate",
+      "status": "COMPLETE"
+    }
+  ],
+  "status": "COMPLETE"
+}

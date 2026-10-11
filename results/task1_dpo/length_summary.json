@@ -1,0 +1,140 @@
+{
+  "study": "Task 1 standard versus supplied length-balanced training",
+  "strata": [
+    {
+      "condition": "standard",
+      "stratum": "length_matched",
+      "pairs": 80,
+      "mean_dpo_loss": 0.6851746004074812,
+      "preference_accuracy": 0.5875
+    },
+    {
+      "condition": "standard",
+      "stratum": "preferred_longer",
+      "pairs": 78,
+      "mean_dpo_loss": 0.6984697160048362,
+      "preference_accuracy": 0.46153846153846156
+    },
+    {
+      "condition": "standard",
+      "stratum": "rejected_longer",
+      "pairs": 79,
+      "mean_dpo_loss": 0.6606925427913666,
+      "preference_accuracy": 0.6708860759493671
+    },
+    {
+      "condition": "length_balanced",
+      "stratum": "length_matched",
+      "pairs": 80,
+      "mean_dpo_loss": 0.6792421836405993,
+      "preference_accuracy": 0.5875
+    },
+    {
+      "condition": "length_balanced",
+      "stratum": "preferred_longer",
+      "pairs": 78,
+      "mean_dpo_loss": 0.7215582032998403,
+      "preference_accuracy": 0.46153846153846156
+    },
+    {
+      "condition": "length_balanced",
+      "stratum": "rejected_longer",
+      "pairs": 79,
+      "mean_dpo_loss": 0.6282266004930569,
+      "preference_accuracy": 0.759493670886076
+    }
+  ],
+  "conditions": {
+    "standard": {
+      "pair_metrics": {
+        "pairs": 237,
+        "mean_dpo_loss": 0.6813895222003953,
+        "preference_accuracy": 0.5738396624472574,
+        "strata": {
+          "length_matched": {
+            "pairs": 80,
+            "mean_dpo_loss": 0.6851746004074812,
+            "preference_accuracy": 0.5875
+          },
+          "preferred_longer": {
+            "pairs": 78,
+            "mean_dpo_loss": 0.6984697160048362,
+            "preference_accuracy": 0.46153846153846156
+          },
+          "rejected_longer": {
+            "pairs": 79,
+            "mean_dpo_loss": 0.6606925427913666,
+            "preference_accuracy": 0.6708860759493671
+          }
+        }
+      },
+      "generation_metrics": {
+        "prompts": 246,
+        "mean_reward_model_score": 1.3267637423383511,
+        "sampled_kl_token_mean": 0.00010999110067721884,
+        "sampled_kl_averaging": "sum(policy minus reference logp over response tokens) / total response tokens",
+        "mean_response_tokens": 134.70325203252034,
+        "std_response_tokens": 100.12235070839829,
+        "total_response_tokens": 33137,
+        "max_response_tokens": 256,
+        "reward_input_truncated_count": 5
+      },
+      "word_limit_metrics": {
+        "prompts": 10,
+        "word_limit_compliance": 0.4,
+        "mean_response_tokens": 47.8,
+        "std_response_tokens": 15.580757362849855,
+        "mean_response_words": 40.7
+      },
+      "evaluation_result": "/workspace/atml-pa2-working/results/task1_dpo/standard/length_eval/summary.json"
+    },
+    "length_balanced": {
+      "pair_metrics": {
+        "pairs": 237,
+        "mean_dpo_loss": 0.6761637805383417,
+        "preference_accuracy": 0.6033755274261603,
+        "strata": {
+          "length_matched": {
+            "pairs": 80,
+            "mean_dpo_loss": 0.6792421836405993,
+            "preference_accuracy": 0.5875
+          },
+          "preferred_longer": {
+            "pairs": 78,
+            "mean_dpo_loss": 0.7215582032998403,
+            "preference_accuracy": 0.46153846153846156
+          },
+          "rejected_longer": {
+            "pairs": 79,
+            "mean_dpo_loss": 0.6282266004930569,
+            "preference_accuracy": 0.759493670886076
+          }
+        }
+      },
+      "generation_metrics": {
+        "prompts": 246,
+        "mean_reward_model_score": 1.3812110714796113,
+        "sampled_kl_token_mean": 0.00270765791817066,
+        "sampled_kl_averaging": "sum(policy minus reference logp over response tokens) / total response tokens",
+        "mean_response_tokens": 132.1178861788618,
+        "std_response_tokens": 99.4195262531954,
+        "total_response_tokens": 32501,
+        "max_response_tokens": 256,
+        "reward_input_truncated_count": 5
+      },
+      "word_limit_metrics": {
+        "prompts": 10,
+        "word_limit_compliance": 0.5,
+        "mean_response_tokens": 42.9,
+        "std_response_tokens": 12.0287156421623,
+        "mean_response_words": 36.0
+      },
+      "evaluation_result": "/workspace/atml-pa2-working/results/task1_dpo/length_balanced/length_eval/summary.json"
+    }
+  },
+  "generation_protocol": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "do_sample": true
+  }
+}

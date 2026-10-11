@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "signature": "2669bf2c01d15e4e4017dadbce207ad8a00e09a1a11197d431c0cced5aceb399",
+  "variants": 100,
+  "pairs": 80,
+  "variant_scores_sha256": "78d1f27594925baa909ac21a1159fbe36c26ba7b50831b7a21ae01c4f96382ff",
+  "exact_pairs_sha256": "739c70637bd0dcbc3c87372a82d3ad6ab5408d81ae49f86e0abfdf4e2ca5ac2d",
+  "seconds": 0.004
+}

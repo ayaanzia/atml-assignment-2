@@ -1,0 +1,93 @@
+{
+  "name": "length_balanced",
+  "dataset": "length",
+  "adapter": "/workspace/atml-pa2-working/outputs/task1_dpo/length_balanced",
+  "adapter_sha256": "c379f27cbeeb29a8e419cbafa48560dfdacf85006aea965797835411c1babf4c",
+  "beta": 0.1,
+  "pair_selection": {
+    "eligible_pairs": 237,
+    "excluded_prompt_pairs": 9,
+    "selected_ids_sha256": "69f294cac0abea4338b4f183dcdf7e63f0b6c0adaedd8349f1fc1f776ebaaa6a",
+    "strata": {
+      "rejected_longer": 79,
+      "preferred_longer": 78,
+      "length_matched": 80
+    },
+    "chosen_truncated_pairs": 4,
+    "rejected_truncated_pairs": 6,
+    "max_processed_sequence_tokens": 768
+  },
+  "pair_metrics": {
+    "pairs": 237,
+    "mean_dpo_loss": 0.6761637805383417,
+    "preference_accuracy": 0.6033755274261603,
+    "strata": {
+      "length_matched": {
+        "pairs": 80,
+        "mean_dpo_loss": 0.6792421836405993,
+        "preference_accuracy": 0.5875
+      },
+      "preferred_longer": {
+        "pairs": 78,
+        "mean_dpo_loss": 0.7215582032998403,
+        "preference_accuracy": 0.46153846153846156
+      },
+      "rejected_longer": {
+        "pairs": 79,
+        "mean_dpo_loss": 0.6282266004930569,
+        "preference_accuracy": 0.759493670886076
+      }
+    }
+  },
+  "generation_metrics": {
+    "prompts": 246,
+    "mean_reward_model_score": 1.3812110714796113,
+    "sampled_kl_token_mean": 0.00270765791817066,
+    "sampled_kl_averaging": "sum(policy minus reference logp over response tokens) / total response tokens",
+    "mean_response_tokens": 132.1178861788618,
+    "std_response_tokens": 99.4195262531954,
+    "total_response_tokens": 32501,
+    "max_response_tokens": 256,
+    "reward_input_truncated_count": 5
+  },
+  "generation_max_prompt_tokens": 1125,
+  "generation_max_new_tokens": 256,
+  "word_limit_metrics": {
+    "prompts": 10,
+    "word_limit_compliance": 0.5,
+    "mean_response_tokens": 42.9,
+    "std_response_tokens": 12.0287156421623,
+    "mean_response_words": 36.0
+  },
+  "loaded_models": {
+    "policy": {
+      "parameter_dtypes": {
+        "torch.float16": 338,
+        "torch.float32": 112
+      },
+      "devices": {
+        "cuda:0": 450
+      },
+      "loaded_8bit": false,
+      "loaded_4bit": false
+    },
+    "reward": {
+      "parameter_dtypes": {
+        "torch.float16": 143,
+        "torch.int8": 196
+      },
+      "devices": {
+        "cuda:0": 339
+      },
+      "loaded_8bit": true,
+      "loaded_4bit": false
+    }
+  },
+  "autocast_dtype": "torch.float16",
+  "model_loading_seconds": 6.393,
+  "pair_scoring_seconds": 63.868,
+  "generation_and_reward_seconds": 2042.594,
+  "word_limit_seconds": 22.054,
+  "peak_cuda_allocated_gib": 5.218,
+  "peak_cuda_reserved_gib": 5.66
+}

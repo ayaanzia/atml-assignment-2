@@ -1,0 +1,142 @@
+{
+  "cache": "/workspace/atml-pa2-t34/cached/grpo_k_cache.jsonl",
+  "cached_prompts": 24,
+  "fixed_generations_per_condition": 192,
+  "cached_completions_clipped_at_generation_cap": 29,
+  "partition": "consecutive nonoverlapping generation indices within each cached prompt",
+  "reward_std_tolerance": 1e-06,
+  "difficulty": {
+    "rule": "rank prompts by mean reward across all eight cache completions; lower and higher halves; ties by source_index",
+    "median_threshold": 2.19873046875,
+    "lower_prompt_ids": [
+      "671",
+      "495",
+      "457",
+      "961",
+      "953",
+      "175",
+      "936",
+      "280",
+      "254",
+      "796",
+      "510",
+      "873"
+    ],
+    "higher_prompt_ids": [
+      "436",
+      "981",
+      "124",
+      "922",
+      "263",
+      "185",
+      "832",
+      "942",
+      "184",
+      "463",
+      "755",
+      "507"
+    ],
+    "interpretation": "Cached reward is a difficulty proxy, not gold task accuracy"
+  },
+  "conditions": [
+    {
+      "k": 2,
+      "difficulty_bin": "all",
+      "groups": 96,
+      "generations": 192,
+      "informative_group_rate": 0.9375,
+      "uninformative_group_fraction": 0.0625,
+      "mean_within_group_reward_std": 0.3845672607421875,
+      "relative_signal_variance": 0.9375,
+      "mean_completion_tokens": 396.1770833333333
+    },
+    {
+      "k": 2,
+      "difficulty_bin": "lower_cached_reward",
+      "groups": 48,
+      "generations": 96,
+      "informative_group_rate": 0.8958333333333334,
+      "uninformative_group_fraction": 0.10416666666666667,
+      "mean_within_group_reward_std": 0.5283304850260416,
+      "relative_signal_variance": 0.8958333333333334,
+      "mean_completion_tokens": 406.5625
+    },
+    {
+      "k": 2,
+      "difficulty_bin": "higher_cached_reward",
+      "groups": 48,
+      "generations": 96,
+      "informative_group_rate": 0.9791666666666666,
+      "uninformative_group_fraction": 0.020833333333333332,
+      "mean_within_group_reward_std": 0.24080403645833334,
+      "relative_signal_variance": 0.9791666666666666,
+      "mean_completion_tokens": 385.7916666666667
+    },
+    {
+      "k": 4,
+      "difficulty_bin": "all",
+      "groups": 48,
+      "generations": 192,
+      "informative_group_rate": 0.9583333333333334,
+      "uninformative_group_fraction": 0.041666666666666664,
+      "mean_within_group_reward_std": 0.5410043663966159,
+      "relative_signal_variance": 0.9583333396763482,
+      "mean_completion_tokens": 396.1770833333333
+    },
+    {
+      "k": 4,
+      "difficulty_bin": "lower_cached_reward",
+      "groups": 24,
+      "generations": 96,
+      "informative_group_rate": 0.9166666666666666,
+      "uninformative_group_fraction": 0.08333333333333333,
+      "mean_within_group_reward_std": 0.7115063369274139,
+      "relative_signal_variance": 0.9166666612002597,
+      "mean_completion_tokens": 406.5625
+    },
+    {
+      "k": 4,
+      "difficulty_bin": "higher_cached_reward",
+      "groups": 24,
+      "generations": 96,
+      "informative_group_rate": 1.0,
+      "uninformative_group_fraction": 0.0,
+      "mean_within_group_reward_std": 0.37050239586581785,
+      "relative_signal_variance": 1.0000000181524367,
+      "mean_completion_tokens": 385.7916666666667
+    },
+    {
+      "k": 8,
+      "difficulty_bin": "all",
+      "groups": 24,
+      "generations": 192,
+      "informative_group_rate": 0.9583333333333334,
+      "uninformative_group_fraction": 0.041666666666666664,
+      "mean_within_group_reward_std": 0.619054414331913,
+      "relative_signal_variance": 0.9583333345994128,
+      "mean_completion_tokens": 396.1770833333333
+    },
+    {
+      "k": 8,
+      "difficulty_bin": "lower_cached_reward",
+      "groups": 12,
+      "generations": 96,
+      "informative_group_rate": 0.9166666666666666,
+      "uninformative_group_fraction": 0.08333333333333333,
+      "mean_within_group_reward_std": 0.8002487346529961,
+      "relative_signal_variance": 0.9166666757712426,
+      "mean_completion_tokens": 406.5625
+    },
+    {
+      "k": 8,
+      "difficulty_bin": "higher_cached_reward",
+      "groups": 12,
+      "generations": 96,
+      "informative_group_rate": 1.0,
+      "uninformative_group_fraction": 0.0,
+      "mean_within_group_reward_std": 0.4378600940108299,
+      "relative_signal_variance": 0.9999999934275832,
+      "mean_completion_tokens": 385.7916666666667
+    }
+  ]
+}

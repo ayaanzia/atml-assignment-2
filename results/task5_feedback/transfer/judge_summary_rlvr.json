@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "dataset": "transfer",
+  "competitor": "rlvr",
+  "signature": "776e1a077b6e561c1e3265114eedebd3906a2ba1e90874a30cc25609fb8a1dab",
+  "records": 100,
+  "new_records_this_invocation": 100,
+  "judged_sha256": "ede9787e79af2b756b7051e3fb5368c5114f084ac35dd1b12a74f6b469402ff3",
+  "judge_model": {
+    "name": "fixed Task 5 pairwise AI judge",
+    "parameter_dtypes": {
+      "torch.float16": 182,
+      "torch.uint8": 252
+    },
+    "devices": {
+      "cuda:0": 434
+    },
+    "loaded_8bit": false,
+    "loaded_4bit": true,
+    "model_commit_hash": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "judge_model_loading_seconds": 4.799,
+  "judging_seconds": 31.391,
+  "timing_note": "judging seconds cover only new comparisons in this invocation",
+  "judge_cache_hits": 0,
+  "new_judge_inferences": 100,
+  "ties_include_possible_parse_failures": true,
+  "peak_cuda_allocated_gib_so_far": 2.877,
+  "peak_cuda_reserved_gib_so_far": 2.986
+}

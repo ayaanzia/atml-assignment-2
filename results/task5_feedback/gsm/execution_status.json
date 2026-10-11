@@ -1,0 +1,38 @@
+{
+  "dataset": "gsm",
+  "requested_stage": "all",
+  "requested_policy": null,
+  "completion_scope": "requested stage and policy only; full Task 5 requires both domains and diagnostics",
+  "generation": [
+    {
+      "policy": "sft",
+      "status": "PASS",
+      "records": 300
+    },
+    {
+      "policy": "rlvr",
+      "status": "PASS",
+      "records": 300
+    },
+    {
+      "policy": "rlaif",
+      "status": "PASS",
+      "records": 300
+    }
+  ],
+  "judging": [
+    {
+      "competitor": "rlvr",
+      "status": "PASS",
+      "records": 300
+    },
+    {
+      "competitor": "rlaif",
+      "status": "PASS",
+      "records": 300
+    }
+  ],
+  "aggregation": "COMPLETE",
+  "status": "COMPLETE",
+  "incomplete_stages": []
+}

@@ -10,6 +10,10 @@ num_generations: 4
 group_sizes: [2, 4, 8]
 max_prompt_length: 256
 max_completion_length: 512
+# Held-out Task 3 generation uses the same cap as its continuation.
+eval_max_completion_length: 512
+# Match Task 2's reward-input cap for the shared prompt/reward setup.
+reward_max_length: 1280
 mask_truncated_completions: true
 max_grad_norm: 1.0
 output: outputs/task3_grpo/standard

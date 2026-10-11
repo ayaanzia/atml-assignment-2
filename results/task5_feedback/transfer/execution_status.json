@@ -1,0 +1,38 @@
+{
+  "dataset": "transfer",
+  "requested_stage": "all",
+  "requested_policy": null,
+  "completion_scope": "requested stage and policy only; full Task 5 requires both domains and diagnostics",
+  "generation": [
+    {
+      "policy": "sft",
+      "status": "PASS",
+      "records": 100
+    },
+    {
+      "policy": "rlvr",
+      "status": "PASS",
+      "records": 100
+    },
+    {
+      "policy": "rlaif",
+      "status": "PASS",
+      "records": 100
+    }
+  ],
+  "judging": [
+    {
+      "competitor": "rlvr",
+      "status": "PASS",
+      "records": 100
+    },
+    {
+      "competitor": "rlaif",
+      "status": "PASS",
+      "records": 100
+    }
+  ],
+  "aggregation": "COMPLETE",
+  "status": "COMPLETE",
+  "incomplete_stages": []
+}

@@ -1,0 +1,36 @@
+{
+  "run_name": "standard",
+  "beta": 0.1,
+  "dataset_path": "/workspace/atml-pa2-working/data/dpo_standard_train.jsonl",
+  "selection": {
+    "eligible_pairs": 1446,
+    "excluded_prompt_pairs": 54,
+    "selected_ids_sha256": "d52d68d0947ffd0e5b819ef1fdc1a8cab4993495a1eba72ca497c2a969c7c18b",
+    "strata": {
+      "None": 1446
+    },
+    "chosen_truncated_pairs": 172,
+    "rejected_truncated_pairs": 133,
+    "max_processed_sequence_tokens": 768
+  },
+  "epochs": 1,
+  "batch_size": 2,
+  "grad_accum_steps": 8,
+  "backward_passes": 723,
+  "optimizer_updates": 91,
+  "trainable_parameters_changed": 112,
+  "trainable_parameter_dtype_counts": {
+    "torch.float32": 112
+  },
+  "skipped_optimizer_steps": 0,
+  "processed_pairs": 1446,
+  "mean_train_loss": 0.6852007274146231,
+  "preparation_seconds": 11.999,
+  "model_loading_seconds": 9.852,
+  "optimization_seconds": 691.812,
+  "peak_cuda_allocated_gib": 6.659,
+  "peak_cuda_reserved_gib": 10.232,
+  "adapter_path": "/workspace/atml-pa2-working/outputs/task1_dpo/standard",
+  "latest_state_path": "/workspace/atml-pa2-working/outputs/task1_dpo/standard/latest_state.pt",
+  "run_signature": "f0600d497bface9bcebc980507c42d50a02bac9f5499b23b92902973321faf72"
+}

@@ -1,0 +1,27 @@
+{
+  "policy": "sft",
+  "signature": "30f483f2f9b2bfa41b7ef95ea57c0d581741f09e52b0ec02322229a02c62684b",
+  "status": "PASS",
+  "records": 450,
+  "new_records_this_invocation": 450,
+  "judged_sha256": "aae5c8844df87688eac8b8ad1de60e24bba36fa00eb73c71c834d7cbc6b4ad63",
+  "judge_model": {
+    "name": "fixed categorical AI judge",
+    "parameter_dtypes": {
+      "torch.float16": 182,
+      "torch.uint8": 252
+    },
+    "devices": {
+      "cuda:0": 434
+    },
+    "loaded_8bit": false,
+    "loaded_4bit": true
+  },
+  "judge_model_loading_seconds": 71.299,
+  "judging_seconds": 893.691,
+  "timing_note": "judging seconds cover only newly scored records in this invocation",
+  "ambiguous_count": 0,
+  "parse_failure_count": 0,
+  "peak_cuda_allocated_gib_so_far": 2.873,
+  "peak_cuda_reserved_gib_so_far": 2.938
+}

@@ -1,0 +1,19 @@
+{
+  "signature": "d07f415fee98c44ca53ca2cc797027a2a4a6b9170f5bffede211cfcea94cf618",
+  "protocol": {
+    "policy": "dpo",
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter": "outputs/task1_dpo/standard",
+    "adapter_sha256": "181da219b41c3e4dac4e2e469ea73b4e973541faed16664e07111230ea02d455",
+    "xstest_sha256": "da6486e5b427854d8eb8e8a7b5f027b7a76630e77cf9924ac5971165647858fe",
+    "batch_size": 4,
+    "prompt_cap": 256,
+    "response_cap": 256,
+    "decoding": {
+      "do_sample": false,
+      "temperature": 0.0,
+      "top_p": 1.0
+    },
+    "storage_dtype": "float16"
+  }
+}

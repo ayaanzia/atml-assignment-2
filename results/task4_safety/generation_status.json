@@ -1,0 +1,25 @@
+{
+  "policies": [
+    {
+      "policy": "sft",
+      "status": "PASS",
+      "records": 450
+    },
+    {
+      "policy": "dpo",
+      "status": "PASS",
+      "records": 450
+    },
+    {
+      "policy": "ppo",
+      "status": "PASS",
+      "records": 450
+    },
+    {
+      "policy": "grpo",
+      "status": "PASS",
+      "records": 450
+    }
+  ],
+  "four_policy_generation_complete": true
+}
