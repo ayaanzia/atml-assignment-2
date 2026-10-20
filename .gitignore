@@ -11,6 +11,9 @@ venv
 hf_cache/
 .huggingface/
 wandb/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Student outputs
 outputs/
@@ -26,18 +29,59 @@ checkpoints/*
 !checkpoints/README.md
 manifests/*
 !manifests/README.md
+!manifests/fixed_split_ids.json
 data/*
 !data/README.md
 !data/word_limit_prompts.jsonl
 
-# Audit deblinding key (the labeled/joined audit results are retained)
-results/task4_safety/manual_audit_key.csv
+# Completed audit mapping is tracked: aggregation needs it to reproduce agreement.
+# Environment preflights are not experiment results. Keep actual run histories.
+/results/task1_dpo/preflight/
+/results/task1_dpo/preflight_one_prompt/
+/results/task3_grpo/preflight_grpo/
+
+# Model weights and serialized optimizer/training states, wherever saved
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+*.bin
+*.gguf
+*.onnx
 
 # Misc
 *.zip
 .DS_Store
 *.pdf
 /rough/
+/report/
+/reports/
+/paper/
+*.tex
+*.bib
+*.sty
+*.cls
+*.docx
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+
+# Agent notes, local tooling, and smoke-test notebooks
+.agents/
+.codex/
+AGENT.md
+AGENTS.md
+handover.md
+prompt.md
+*_plan.md
+*_design_choices.md
+smoke_test.ipynb
+.vscode/
+.idea/
 
 # Local credentials and environment secrets
 .env
@@ -46,3 +90,7 @@ results/task4_safety/manual_audit_key.csv
 id_ed25519
 id_rsa
 *.pem
+*.key
+.ssh/
+.aws/
+kaggle.json
